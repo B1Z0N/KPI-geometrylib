@@ -1,6 +1,4 @@
 //write [assignment operator, constructor] x [copy, move]
-//fix conversion of string constant to char *
-//change int to bool
 #ifndef __GEOMETRY_LIB_INCLUSION_MACRO
 #define __GEOMETRY_LIB_INCLUSION_MACRO
 
@@ -78,7 +76,7 @@ public:
     void TurnZPoint(double phi);
 
     tPoint &operator=(const tPoint &);
-    friend int operator==(const tPoint &, const tPoint &);
+    friend bool operator==(const tPoint &, const tPoint &);
 
     friend ostream &operator<<(ostream &, const tPoint &); //output
     friend istream &operator>>(istream &, tPoint &);       //input
@@ -104,7 +102,7 @@ public:
     void Normalize();
 
     tVector &operator=(const tVector &);
-    friend int operator==(const tVector &, const tVector &);
+    friend bool operator==(const tVector &, const tVector &);
 
     friend tVector &operator*(const tVector &, double); //mult to scalar
     friend tVector &operator*(double, const tVector &);
@@ -150,15 +148,15 @@ public:
 
     void setnew(double, double, double, double); //set new values of fields
 
-    int correct() const;
+    bool correct() const;
     void Normalize();
     tPlane Normalize() const;
 
-    int HasPoint(const tPoint &) const;       //check point on membership of plane
+    bool HasPoint(const tPoint &) const;       //check point on membership of plane
     double DistToPoint(const tPoint &) const; //distance from plane to point
 
     tPlane &operator=(const tPlane &);
-    friend int operator==(const tPlane &, const tPlane &);
+    friend bool operator==(const tPlane &, const tPlane &);
 
     friend ostream &operator<<(ostream &, const tPlane &);
     friend istream &operator>>(istream &, tPlane &);
@@ -185,7 +183,7 @@ public:
     void setnew(double, double, double,
                 double, double, double); //set new values of fields
 
-    int correct() const;
+    bool correct() const;
 
     tVector GDir() const;
     tPoint GSource() const;
@@ -206,12 +204,12 @@ public:
     void SetSource(const tPoint &);
     void SetDir(const tVector &);
 
-    int HasPoint(const tPoint &) const;       //check point on membership of line
+    bool HasPoint(const tPoint &) const;       //check point on membership of line
     double DistToPoint(const tPoint &) const; //distance from line to point
-    int LinePar(const tLine &) const;         //testing on parallel lines
+    bool LinePar(const tLine &) const;         //testing on parallel lines
 
     tLine &operator=(const tLine &);
-    friend int operator==(const tLine&, const tLine&);
+    friend bool operator==(const tLine&, const tLine&);
 
     friend ostream &operator<<(ostream &, const tLine &);
     friend istream &operator>>(istream &, tLine &);
@@ -235,7 +233,7 @@ public:
               double Cx = 0, double Cy = 1, double Cz = 0, char const*NewName = "a Triangle");
     tTriangle(const tPoint &A, const tPoint &B, const tPoint &C, char const *NewName = "a Triangle");
     tTriangle(const tTriangle &T); //copying constructor
-    int correct() const;
+    bool correct() const;
 
     tPoint GetA() const;
     void SetA(const tPoint &);
@@ -247,7 +245,7 @@ public:
     double Square() const; //square of triangle
 
     tTriangle &operator=(const tTriangle &);
-    friend int operator==(const tTriangle &, const tTriangle &);
+    friend bool operator==(const tTriangle &, const tTriangle &);
 
     friend ostream &operator<<(ostream &, const tTriangle &);
     friend istream &operator>>(istream &, tTriangle &);
@@ -274,7 +272,7 @@ public:
               double sx = 0, double sy = 0, double sz = 1, char const *NewName = "a Tetraedr");
     tTetraedr(const tTetraedr &); //copying constructor
 
-    int correct() const;
+    bool correct() const;
 
     tPoint GetS() const;
     void SetS(const tPoint &);
@@ -284,7 +282,7 @@ public:
     double Volume() const; //volume of tetraedr
 
     tTetraedr &operator=(const tTetraedr &);
-    friend int operator==(const tTetraedr &, const tTetraedr &);
+    friend bool operator==(const tTetraedr &, const tTetraedr &);
 
     friend ostream &operator<<(ostream &, const tTetraedr &);
     friend istream &operator>>(istream &, tTetraedr &);

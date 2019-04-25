@@ -66,12 +66,9 @@ void tLine::setnew(double newa, double newb, double newc, double newn,
   assert(correct());
 }
 
-int tLine::correct() const
+bool tLine::correct() const
 {
-  if (fDir.Norm() < eps)
-    return 0;
-  else
-    return 1;
+  return !(fDir.Norm() < eps);
 }
 
 double tLine::Sx() const
@@ -169,21 +166,15 @@ double tLine::DistToPoint(const tPoint &M) const
   return d;
 }
 
-int tLine::HasPoint(const tPoint &M) const
+bool tLine::HasPoint(const tPoint &M) const
 {
-  if (DistToPoint(M) < eps)
-    return 1;
-  else
-    return 0;
+  return (DistToPoint(M) < eps);
 }
 
-int tLine::LinePar(const tLine &L) const
+bool tLine::LinePar(const tLine &L) const
 {
-  int f = 0;
   tVector v = fDir * L.fDir;
-  if ((v.x() < eps) && (v.y() < eps) && (v.z() < eps))
-    f = 1;
-  return f;
+  return ((v.x() < eps) && (v.y() < eps) && (v.z() < eps));
 }
 
 tLine &tLine::operator=(const tLine &P)
@@ -193,12 +184,9 @@ tLine &tLine::operator=(const tLine &P)
   return *this;
 }
 
-int operator==(const tLine &L1, const tLine &L2)
+bool operator==(const tLine &L1, const tLine &L2)
 {
-  if ((L1.LinePar(L2)) && (L1.HasPoint(L2.GSource())))
-    return 1;
-  else
-    return 0;
+  return ((L1.LinePar(L2)) && (L1.HasPoint(L2.GSource())));
 }
 
 ostream &operator<<(ostream &output, const tLine &P)

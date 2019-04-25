@@ -38,12 +38,9 @@ tTetraedr::tTetraedr(const tPlane &P1, const tPlane &P2, const tPlane &P3, const
   assert(correct());
 }
 
-int tTetraedr::correct() const
+bool tTetraedr::correct() const
 {
-  if (Volume() < eps)
-    return 0;
-  else
-    return 1;
+  return !(Volume() < eps);
 }
 
 double tTetraedr::Volume() const
@@ -84,12 +81,9 @@ tTetraedr &tTetraedr::operator=(const tTetraedr &T)
   return *this;
 }
 
-int operator==(const tTetraedr &T1, const tTetraedr &T2)
+bool operator==(const tTetraedr &T1, const tTetraedr &T2)
 {
-  if ((T1.GetT() == T2.GetT()) && (T1.GetS() == T2.GetS()))
-    return 1;
-  else
-    return 0;
+  return ((T1.GetT() == T2.GetT()) && (T1.GetS() == T2.GetS()));
 }
 
 ostream &operator<<(ostream &output, const tTetraedr &T)

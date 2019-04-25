@@ -54,7 +54,7 @@ tVector &tVector::operator=(const tVector &p)
     return *this;
 }
 
-int operator==(const tVector &p, const tVector &q)
+bool operator==(const tVector &p, const tVector &q)
 {
     return static_cast<tPoint>(p) == static_cast<tPoint>(q);
 }

@@ -89,7 +89,7 @@ void tPlane::setnew(double newA, double newB, double newC, double newD)
   assert(correct());
 }
 
-int tPlane::correct() const
+bool tPlane::correct() const
 {
   return !(
       (fabs(A()) < eps) &&
@@ -140,13 +140,9 @@ double tPlane::DistToPoint(const tPoint &p) const
   P.Normalize();
   return fabs(P.A() * p.x() + P.B() * p.y() + P.C() * p.z() + P.D());
 }
-int tPlane::HasPoint(const tPoint &p) const
+bool tPlane::HasPoint(const tPoint &p) const
 {
-
-  if (DistToPoint(p) < eps)
-    return 1;
-  else
-    return 0;
+  return (DistToPoint(p) < eps);
 }
 
 tPlane &tPlane::operator=(const tPlane &p)
@@ -161,7 +157,7 @@ tPlane &tPlane::operator=(const tPlane &p)
   return *this;
 }
 
-int operator==(const tPlane& pl1, const tPlane& pl2)
+bool operator==(const tPlane& pl1, const tPlane& pl2)
 {
   tPlane p = pl1.Normalize();
   tPlane q = pl2.Normalize();

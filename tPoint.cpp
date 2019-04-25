@@ -104,13 +104,12 @@ tPoint &tPoint::operator=(const tPoint &p)
     return *this;
 }
 
-int operator==(const tPoint &p, const tPoint &q)
+bool operator==(const tPoint &p, const tPoint &q)
 {
     double dx = p.x() - q.x(),
            dy = p.y() - q.y(),
-           dz = p.z() - q.z(),
-           r = -1;
-    r =
+           dz = p.z() - q.z();
+    bool r = 
         (fabs(dx) < eps) &&
         (fabs(dy) < eps) &&
         (fabs(dz) < eps);

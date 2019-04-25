@@ -24,12 +24,9 @@ tTriangle::tTriangle(const tTriangle &T)
   fC = T.GetC();
 }
 
-int tTriangle::correct() const
+bool tTriangle::correct() const
 {
-  if (Square() < eps)
-    return 0;
-  else
-    return 1;
+  return !(Square() < eps);
 }
 
 double tTriangle::Square() const
@@ -76,12 +73,9 @@ tTriangle &tTriangle::operator=(const tTriangle &T)
   return *this;
 }
 
-int operator==(const tTriangle &T1, const tTriangle &T2)
+bool operator==(const tTriangle &T1, const tTriangle &T2)
 {
-  if ((T1.GetA() == T2.GetA()) && (T1.GetA() == T2.GetA()) && (T1.GetA() == T2.GetA()))
-    return 1;
-  else
-    return 0;
+  return ((T1.GetA() == T2.GetA()) && (T1.GetA() == T2.GetA()) && (T1.GetA() == T2.GetA()));
 }
 
 ostream &operator<<(ostream &output, const tTriangle &T)
