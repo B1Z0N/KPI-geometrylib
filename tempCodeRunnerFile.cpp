@@ -1,1 +1,40 @@
-Cut3
+< std::showpos;
+	// cout << "First straight: " << "(x" << -b.x << ")/";
+	// std::cout << std::noshowpos;	cout <<	b1.x;
+	// std::cout << std::showpos;	cout << "=(y" << -b.y << ")/";
+	// std::cout << std::noshowpos;	cout << b1.y;
+	// std::cout << std::showpos;	cout << "=(z" << -b.z << ")/";
+	// std::cout << std::noshowpos;	cout << b1.z << endl;
+	
+	// cout << "Second straight: " << "(x" << -c.x << ")/";
+	// std::cout << std::noshowpos; 	cout <<	c1.x;
+	// std::cout << std::showpos; 	cout << "=(y" << -c.y << ")/";
+	// std::cout << std::noshowpos; 	cout << c1.y;
+	// std::cout << std::showpos; 	cout << "=(z" << -c.z << ")/";
+	// std::cout << std::noshowpos; 	cout << c1.z << endl;
+	
+	// cout << "RESULT" << endl;
+	// cout << "Intersection of planes" << endl;
+	// int p=b1.x+b.x-A.x;
+	// int l=b1.y+b.y-A.y;
+	// int m=b1.z+b.z-A.z;
+	// int o=A.x, q=b.x-A.x, v=A.y, j=b.y-A.y, n=A.z, t=b.z-A.z;
+	// int d=-j*m*o+j*n*p-l*n*q+l*o*t+m*q*v-p*t*v;
+	// int a=-l*t+j*m;
+	// int B=-m*q+p*t;
+	// int C=-j*p+l*q;
+	// cout << a;
+	// std::cout << std::showpos;
+	// cout << "x" << B << "y" << C << "z" << d << "=0" << endl;
+	// p=c1.x+c.x-A.x;
+	// l=c1.y+c.y-A.y;
+	// m=c1.z+c.z-A.z;
+	// o=A.x, q=c.x-A.x, v=A.y, j=c.y-A.y, n=A.z, t=c.z-A.z;
+	// d=-j*m*o+j*n*p-l*n*q+l*o*t+m*q*v-p*t*v;
+	// a=-l*t+j*m;
+	// B=-m*q+p*t;
+	// C=-j*p+l*q;
+	// std::cout << std::noshowpos;
+	// cout << a;
+	// std::cout << std::showpos;
+	// cout << "x" << B << "y"

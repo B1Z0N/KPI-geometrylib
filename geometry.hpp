@@ -1,4 +1,7 @@
 //write [assignment operator, constructor] x [copy, move]
+//virtual functions, like: correct, operator==, operator=, operator>>, operator<<
+//namespaces
+
 #ifndef __GEOMETRY_LIB_INCLUSION_MACRO
 #define __GEOMETRY_LIB_INCLUSION_MACRO
 

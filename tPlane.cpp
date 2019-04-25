@@ -1,7 +1,7 @@
 #include "geometry.hpp"
 
 tPlane::tPlane(double newA, double newB, double newC, double newD, char const *NewName)
-    :tNamed(NewName)
+    : tNamed(NewName)
 {
   fA = newA;
   fB = newB;
@@ -11,7 +11,7 @@ tPlane::tPlane(double newA, double newB, double newC, double newD, char const *N
 }
 
 tPlane::tPlane(const tPlane &p)
-    :tNamed(p)
+    : tNamed(p)
 {
   fA = p.A();
   fB = p.B();
@@ -51,7 +51,7 @@ double tPlane::C() const
   return fC;
 }
 
-double tPlane::D() const 
+double tPlane::D() const
 {
   return fD;
 }
@@ -107,9 +107,9 @@ tPlane tPlane::Normalize() const
   {
     sign = A() / fabs(A());
     t = tPlane(sign * A() / norm,
-           sign * B() / norm,
-           sign * C() / norm,
-           sign * D() / norm);
+               sign * B() / norm,
+               sign * C() / norm,
+               sign * D() / norm);
   }
   else // A==0
       if (fabs(B()) > eps)
@@ -131,8 +131,8 @@ tPlane tPlane::Normalize() const
 
 void tPlane::Normalize()
 {
-    const tPlane t{*this};
-    tPlane(t.Normalize());
+  const tPlane t{*this};
+  tPlane(t.Normalize());
 }
 double tPlane::DistToPoint(const tPoint &p) const
 {
@@ -157,7 +157,7 @@ tPlane &tPlane::operator=(const tPlane &p)
   return *this;
 }
 
-bool operator==(const tPlane& pl1, const tPlane& pl2)
+bool operator==(const tPlane &pl1, const tPlane &pl2)
 {
   tPlane p = pl1.Normalize();
   tPlane q = pl2.Normalize();
@@ -192,20 +192,20 @@ istream &operator>>(istream &input, tPlane &P)
 
 tPoint Cut3Planes(const tPlane &a, const tPlane &b, const tPlane &c)
 {
-    double Det, DetX, DetY, DetZ, MNorm;
-    if ((a.correct()) && (b.correct()) && (c.correct()))
-    {
-        Det = Deter3(a.A(), a.B(), a.C(), b.A(), b.B(), b.C(),
-                     c.A(), c.B(), c.C());
-        MNorm = fabs(a.A()) + fabs(a.B()) + fabs(a.C()) + fabs(b.A()) + fabs(b.C()) + fabs(c.A()) + fabs(c.B()) + fabs(c.C());
-        assert((fabs(Det) / MNorm) > eps);
-        DetX = Deter3(a.D(), a.B(), a.C(), b.D(), b.B(), b.C(),
-                      c.D(), c.B(), c.C());
-        DetY = Deter3(a.A(), a.D(), a.C(), b.A(), b.D(), b.C(),
-                      c.A(), c.D(), c.C());
-        DetZ = Deter3(a.A(), a.B(), a.D(), b.A(), b.B(), b.D(),
-                      c.A(), c.B(), c.D());
-        tPoint T(-DetX / Det, -DetY / Det, -DetZ / Det);
-        return T;
-    }
+  double Det, DetX, DetY, DetZ, MNorm;
+  if ((a.correct()) && (b.correct()) && (c.correct()))
+  {
+    Det = Deter3(a.A(), a.B(), a.C(), b.A(), b.B(), b.C(),
+                 c.A(), c.B(), c.C());
+    MNorm = fabs(a.A()) + fabs(a.B()) + fabs(a.C()) + fabs(b.A()) + fabs(b.C()) + fabs(c.A()) + fabs(c.B()) + fabs(c.C());
+    assert((fabs(Det) / MNorm) > eps);
+    DetX = Deter3(a.D(), a.B(), a.C(), b.D(), b.B(), b.C(),
+                  c.D(), c.B(), c.C());
+    DetY = Deter3(a.A(), a.D(), a.C(), b.A(), b.D(), b.C(),
+                  c.A(), c.D(), c.C());
+    DetZ = Deter3(a.A(), a.B(), a.D(), b.A(), b.B(), b.D(),
+                  c.A(), c.B(), c.D());
+    tPoint T(-DetX / Det, -DetY / Det, -DetZ / Det);
+    return T;
+  }
 }
