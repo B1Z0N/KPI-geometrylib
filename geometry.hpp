@@ -163,7 +163,7 @@ public:
     friend ostream &operator<<(ostream &, const tPlane &);
     friend istream &operator>>(istream &, tPlane &);
 };
-tPoint Cut3Planes(tPlane &a, tPlane &b, tPlane &c); // creating point as intersect of 3 planes
+tPoint Cut3Planes(const tPlane &a, const tPlane &b, const tPlane &c); // creating point as intersect of 3 planes
 //---------------------------------------------------------------------------
 
 //----------------------------LINE-------------------------------------------
@@ -177,47 +177,48 @@ private:
 public:
     tLine(double newa = 0, double newb = 0, double newc = 0,
           double newn = 1, double newm = 0, double newp = 0, char *NewName = "a Line");
-    tLine(tPoint S, tVector D, char *NewName = "a Line");
-    tLine(tPlane v1, tPlane v2, char *NewName = "a Line"); //creating line as intersect of 2 planes
+    tLine(const tPoint& S, const tVector& D, char *NewName = "a Line");
+    tLine(const tPlane& v1, const tPlane& v2, char *NewName = "a Line"); //creating line as intersect of 2 planes
     tLine(const tLine &);                                  //copying constructor
-    tLine(tPoint &, tPlane &);                             //perpendikular
+    tLine(const tPoint &, const tPlane &);                             //perpendikular
 
     void setnew(double, double, double,
                 double, double, double); //set new values of fields
 
-    int correct();
+    int correct() const;
 
-    tVector &GDir();
-    tPoint &GSource();
+    tVector GDir() const;
+    tPoint GSource() const;
 
-    double Sx();
+    double Sx() const;
     void SetSx(double);
-    double Dx();
+    double Dx() const;
     void SetDx(double);
-    double Sy();
+    double Sy() const;
     void SetSy(double);
-    double Dy();
+    double Dy() const;
     void SetDy(double);
-    double Sz();
+    double Sz() const;
     void SetSz(double);
-    double Dz();
+    double Dz() const;
     void SetDz(double);
 
-    void SetSource(tPoint &);
-    void SetDir(tVector &);
+    void SetSource(const tPoint &);
+    void SetDir(const tVector &);
 
-    int HasPoint(tPoint &);       //check point on membership of line
-    double DistToPoint(tPoint &); //distance from line to point
-    int LinePar(tLine &);         //testing on parallel lines
+    int HasPoint(const tPoint &) const;       //check point on membership of line
+    double DistToPoint(const tPoint &) const; //distance from line to point
+    int LinePar(const tLine &) const;         //testing on parallel lines
 
-    tLine &operator=(tLine &);
-    friend int operator==(tLine, tLine);
+    tLine &operator=(const tLine &);
+    friend int operator==(const tLine&, const tLine&);
 
-    friend ostream &operator<<(ostream &, tLine &);
+    friend ostream &operator<<(ostream &, const tLine &);
     friend istream &operator>>(istream &, tLine &);
 };
-tPoint LineCutPlane(tLine l, tPlane p); //creating point as intersect of plane & line
-tPoint ProjectPointToPlane(tPoint &M, tPlane &P);
+
+tPoint LineCutPlane(const tLine& l, const tPlane& p); //creating point as intersect of plane & line
+tPoint ProjectPointToPlane(const tPoint &M, const tPlane &P);
 //----------------------------------------------------------------------------
 
 //--------------------------TRIANGLE-----------------------------------------
@@ -232,23 +233,23 @@ public:
     tTriangle(double Ax = 0, double Ay = 0, double Az = 0,
               double Bx = 1, double By = 0, double Bz = 0,
               double Cx = 0, double Cy = 1, double Cz = 0, char *NewName = "a Triangle");
-    tTriangle(tPoint &A, tPoint &B, tPoint &C, char *NewName = "a Triangle");
+    tTriangle(const tPoint &A, const tPoint &B, const tPoint &C, char *NewName = "a Triangle");
     tTriangle(const tTriangle &T); //copying constructor
-    int correct();
+    int correct() const;
 
-    tPoint &GetA();
-    void SetA(tPoint &);
-    tPoint &GetB();
-    void SetB(tPoint &);
-    tPoint &GetC();
-    void SetC(tPoint &);
+    tPoint GetA() const;
+    void SetA(const tPoint &);
+    tPoint GetB() const;
+    void SetB(const tPoint &);
+    tPoint GetC() const;
+    void SetC(const tPoint &);
 
-    double Square(); //square of triangle
+    double Square() const; //square of triangle
 
-    tTriangle &operator=(tTriangle &);
-    friend int operator==(tTriangle &, tTriangle &);
+    tTriangle &operator=(const tTriangle &);
+    friend int operator==(const tTriangle &, const tTriangle &);
 
-    friend ostream &operator<<(ostream &, tTriangle &);
+    friend ostream &operator<<(ostream &, const tTriangle &);
     friend istream &operator>>(istream &, tTriangle &);
 };
 
@@ -262,30 +263,30 @@ private:
     tPoint fS;
 
 public:
-    tTetraedr(tPoint &V1, tPoint &V2, tPoint &V3,
-              tPoint &S, char *NewName = "a Tetraedr");
-    tTetraedr(tPlane &, tPlane &, tPlane &, tPlane &,
+    tTetraedr(const tPoint &V1, const tPoint &V2, const tPoint &V3,
+              const tPoint &S, char *NewName = "a Tetraedr");
+    tTetraedr(const tPlane &, const tPlane &, const tPlane &, const tPlane &,
               char *NewName = "a Tetraedr"); //tetraedr creating as intersection of 4 planes
-    tTetraedr(tTriangle &, tPoint &, char *NewName = "a Tetraedr");
+    tTetraedr(const tTriangle &, const tPoint &, char *NewName = "a Tetraedr");
     tTetraedr(double ax = 0, double ay = 0, double az = 0,
               double bx = 1, double by = 0, double bz = 0,
               double cx = 0, double cy = 1, double cz = 0,
               double sx = 0, double sy = 0, double sz = 1, char *NewName = "a Tetraedr");
     tTetraedr(const tTetraedr &); //copying constructor
 
-    int correct();
+    int correct() const;
 
-    tPoint GetS();
-    void SetS(tPoint &);
-    tTriangle GetT();
-    void SetT(tTriangle &);
+    tPoint GetS() const;
+    void SetS(const tPoint &);
+    tTriangle GetT() const;
+    void SetT(const tTriangle &);
 
-    double Volume(); //volume of tetraedr
+    double Volume() const; //volume of tetraedr
 
-    tTetraedr &operator=(tTetraedr &);
-    friend int operator==(tTetraedr &, tTetraedr &);
+    tTetraedr &operator=(const tTetraedr &);
+    friend int operator==(const tTetraedr &, const tTetraedr &);
 
-    friend ostream &operator<<(ostream &, tTetraedr &);
+    friend ostream &operator<<(ostream &, const tTetraedr &);
     friend istream &operator>>(istream &, tTetraedr &);
 };
 

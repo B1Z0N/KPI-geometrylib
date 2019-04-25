@@ -16,43 +16,6 @@ tPoint::tPoint(const tPoint &p)
     fz = p.z();
 }
 
-tPoint Cut3Planes(tPlane &a, tPlane &b, tPlane &c)
-{
-    double Det, DetX, DetY, DetZ, MNorm;
-    if ((a.correct()) && (b.correct()) && (c.correct()))
-    {
-        Det = Deter3(a.A(), a.B(), a.C(), b.A(), b.B(), b.C(),
-                     c.A(), c.B(), c.C());
-        MNorm = fabs(a.A()) + fabs(a.B()) + fabs(a.C()) + fabs(b.A()) + fabs(b.C()) + fabs(c.A()) + fabs(c.B()) + fabs(c.C());
-        assert((fabs(Det) / MNorm) > eps);
-        DetX = Deter3(a.D(), a.B(), a.C(), b.D(), b.B(), b.C(),
-                      c.D(), c.B(), c.C());
-        DetY = Deter3(a.A(), a.D(), a.C(), b.A(), b.D(), b.C(),
-                      c.A(), c.D(), c.C());
-        DetZ = Deter3(a.A(), a.B(), a.D(), b.A(), b.B(), b.D(),
-                      c.A(), c.B(), c.D());
-        tPoint T(-DetX / Det, -DetY / Det, -DetZ / Det);
-        return T;
-    }
-}
-
-tPoint LineCutPlane(tLine l, tPlane p)
-{
-    double t, z;
-    z = p.A() * l.Dx() + p.B() * l.Dy() + p.C() * l.Dz();
-    assert(z > eps);
-    t = (-p.D() - p.A() * l.Sx() - p.B() * l.Sy() - p.C() * l.Sz()) / z;
-    tPoint T(l.Dx() * t + l.Sx(), l.Dy() * t + l.Sy(), l.Dz() * t + l.Sz());
-    return T;
-}
-
-tPoint ProjectPointToPlane(tPoint &M, tPlane &P)
-{
-    tLine l(M, P);
-    tPoint T{LineCutPlane(l, P)};
-    return T;
-}
-
 double tPoint::x() const
 {
     return fx;

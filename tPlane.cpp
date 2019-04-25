@@ -193,3 +193,23 @@ istream &operator>>(istream &input, tPlane &P)
   cin >> t;
   P.setD(t);
 }
+
+tPoint Cut3Planes(const tPlane &a, const tPlane &b, const tPlane &c)
+{
+    double Det, DetX, DetY, DetZ, MNorm;
+    if ((a.correct()) && (b.correct()) && (c.correct()))
+    {
+        Det = Deter3(a.A(), a.B(), a.C(), b.A(), b.B(), b.C(),
+                     c.A(), c.B(), c.C());
+        MNorm = fabs(a.A()) + fabs(a.B()) + fabs(a.C()) + fabs(b.A()) + fabs(b.C()) + fabs(c.A()) + fabs(c.B()) + fabs(c.C());
+        assert((fabs(Det) / MNorm) > eps);
+        DetX = Deter3(a.D(), a.B(), a.C(), b.D(), b.B(), b.C(),
+                      c.D(), c.B(), c.C());
+        DetY = Deter3(a.A(), a.D(), a.C(), b.A(), b.D(), b.C(),
+                      c.A(), c.D(), c.C());
+        DetZ = Deter3(a.A(), a.B(), a.D(), b.A(), b.B(), b.D(),
+                      c.A(), c.B(), c.D());
+        tPoint T(-DetX / Det, -DetY / Det, -DetZ / Det);
+        return T;
+    }
+}

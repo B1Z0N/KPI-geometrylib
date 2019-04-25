@@ -1,38 +1,36 @@
 #include "geometry.hpp"
 
-tTetraedr::tTetraedr(tPoint &V1, tPoint &V2, tPoint &V3, tPoint &S, char *NewName) : fT(V1, V2, V3), fS(S)
+tTetraedr::tTetraedr(const tPoint &V1, const tPoint &V2, const tPoint &V3, const tPoint &S, char *NewName)
+    : tNamed(NewName), fT(V1, V2, V3), fS(S)
 {
-  tNamed::tNamed(NewName);
   assert(correct());
 }
 
-tTetraedr::tTetraedr(tTriangle &N, tPoint &S, char *NewName) : fT(N), fS(S)
+tTetraedr::tTetraedr(const tTriangle &N, const tPoint &S, char *NewName)
+    : tNamed(NewName), fT(N), fS(S)
 {
-  tNamed::tNamed(NewName);
   assert(correct());
 }
 
 tTetraedr::tTetraedr(double ax, double ay, double az,
                      double bx, double by, double bz,
                      double cx, double cy, double cz,
-                     double sx, double sy, double sz, char *NewName) : fT(ax, ay, az, bx, by, bz, cx, cy, cz),
-                                                                       fS(sx, sy, sz)
+                     double sx, double sy, double sz, char *NewName) 
+                     : tNamed(NewName), fT(ax, ay, az, bx, by, bz, cx, cy, cz), fS(sx, sy, sz)
 {
-  tNamed::tNamed(NewName);
   assert(correct());
 }
 
-tTetraedr::tTetraedr(tTetraedr &T)
+tTetraedr::tTetraedr(const tTetraedr &T)
+  :tNamed(T)
 {
-
-  tNamed::tNamed(T);
   fT = T.GetT();
   fS = T.GetS();
 }
 
-tTetraedr::tTetraedr(tPlane &P1, tPlane &P2, tPlane &P3, tPlane &P4, char *NewName)
+tTetraedr::tTetraedr(const tPlane &P1, const tPlane &P2, const tPlane &P3, const tPlane &P4, char *NewName)
+  :tNamed(NewName)
 {
-  tNamed::tNamed(NewName);
   tPoint S = Cut3Planes(P1, P2, P3), A = Cut3Planes(P1, P2, P4), B = Cut3Planes(P1, P3, P4), C = Cut3Planes(P2, P3, P4);
   tTriangle T(A, B, C);
   fT = T;
@@ -40,7 +38,7 @@ tTetraedr::tTetraedr(tPlane &P1, tPlane &P2, tPlane &P3, tPlane &P4, char *NewNa
   assert(correct());
 }
 
-int tTetraedr::correct()
+int tTetraedr::correct() const
 {
   if (Volume() < eps)
     return 0;
@@ -48,7 +46,7 @@ int tTetraedr::correct()
     return 1;
 }
 
-double tTetraedr::Volume()
+double tTetraedr::Volume() const
 {
   double Vol;
   tPlane P(fT.GetA(), fT.GetB(), fT.GetC());
@@ -56,28 +54,28 @@ double tTetraedr::Volume()
   return Vol;
 }
 
-tPoint tTetraedr::GetS()
+tPoint tTetraedr::GetS() const
 {
   return fS;
 }
 
-void tTetraedr::SetS(tPoint &P)
+void tTetraedr::SetS(const tPoint &P)
 {
   fS = P;
   assert(correct());
 }
 
-tTriangle tTetraedr::GetT()
+tTriangle tTetraedr::GetT() const
 {
   return fT;
 }
-void tTetraedr::SetT(tTriangle &T)
+void tTetraedr::SetT(const tTriangle &T)
 {
   fT = T;
   assert(correct());
 }
 
-tTetraedr &tTetraedr::operator=(tTetraedr &T)
+tTetraedr &tTetraedr::operator=(const tTetraedr &T)
 {
 
   fT = T.GetT();
@@ -86,7 +84,7 @@ tTetraedr &tTetraedr::operator=(tTetraedr &T)
   return *this;
 }
 
-int operator==(tTetraedr &T1, tTetraedr &T2)
+int operator==(const tTetraedr &T1, const tTetraedr &T2)
 {
   if ((T1.GetT() == T2.GetT()) && (T1.GetS() == T2.GetS()))
     return 1;
@@ -94,7 +92,7 @@ int operator==(tTetraedr &T1, tTetraedr &T2)
     return 0;
 }
 
-ostream &operator<<(ostream &output, tTetraedr &T)
+ostream &operator<<(ostream &output, const tTetraedr &T)
 {
   output << "Tetraedr: \nBase:" << T.GetT() << "Pik: " << T.GetS();
   return output;

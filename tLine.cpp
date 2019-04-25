@@ -1,21 +1,19 @@
 #include "geometry.hpp"
 
 tLine::tLine(double newa, double newb, double newc,
-             double newn, double newm, double newp, char *NewName) : fSource(newa, newb, newc), fDir(newn, newm, newp)
+             double newn, double newm, double newp, char *NewName) : tNamed(NewName), fSource(newa, newb, newc), fDir(newn, newm, newp)
 {
-  tNamed::tNamed(NewName);
   assert(correct());
 }
 
-tLine::tLine(tPoint S, tVector D, char *NewName) : fSource(S), fDir(D)
+tLine::tLine(const tPoint& S, const tVector& D, char *NewName) : tNamed(NewName), fSource(S), fDir(D)
 {
-  tNamed::tNamed(NewName);
   assert(correct());
 }
 
-tLine::tLine(tPlane v1, tPlane v2, char *NewName)
+tLine::tLine(const tPlane& v1, const tPlane& v2, char *NewName)
+  :tNamed(NewName)
 {
-  tNamed::tNamed(NewName);
   fDir.SetX(v1.B() * v2.C() - v1.C() * v2.B());
   fDir.SetY(-(v1.A() * v2.C() - v1.C() * v2.A()));
   fDir.SetZ(v1.A() * v2.B() - v1.B() * v2.A());
@@ -40,16 +38,16 @@ tLine::tLine(tPlane v1, tPlane v2, char *NewName)
   assert(correct());
 }
 
-tLine::tLine(tLine &P)
+tLine::tLine(const tLine& P)
+  :tNamed(P)
 {
-  tNamed::tNamed(P);
   fSource = P.GSource();
   fDir = P.GDir();
 }
 
-tLine::tLine(tPoint &M, tPlane &P)
+tLine::tLine(const tPoint &M, const tPlane &P)
+  :tNamed()
 {
-  tNamed::tNamed();
   fSource = M;
   fDir.SetX(P.A());
   fDir.SetY(P.B());
@@ -68,7 +66,7 @@ void tLine::setnew(double newa, double newb, double newc, double newn,
   assert(correct());
 }
 
-int tLine::correct()
+int tLine::correct() const
 {
   if (fDir.Norm() < eps)
     return 0;
@@ -76,32 +74,32 @@ int tLine::correct()
     return 1;
 }
 
-double tLine::Sx()
+double tLine::Sx() const
 {
   return fSource.x();
 }
 
-double tLine::Sy()
+double tLine::Sy() const
 {
   return fSource.y();
 }
 
-double tLine::Sz()
+double tLine::Sz() const
 {
   return fSource.z();
 }
 
-double tLine::Dx()
+double tLine::Dx() const
 {
   return fDir.x();
 }
 
-double tLine::Dy()
+double tLine::Dy() const
 {
   return fDir.y();
 }
 
-double tLine::Dz()
+double tLine::Dz() const
 {
   return fDir.z();
 }
@@ -126,6 +124,7 @@ void tLine::SetDx(double t)
   fDir.SetX(t);
   assert(correct());
 }
+
 void tLine::SetDy(double t)
 {
   fDir.SetY(t);
@@ -138,29 +137,29 @@ void tLine::SetDz(double t)
   assert(correct());
 }
 
-tVector &tLine::GDir()
+tVector tLine::GDir() const
 {
   return fDir;
 }
 
-tPoint &tLine::GSource()
+tPoint tLine::GSource() const
 {
   return fSource;
 }
 
-void tLine::SetSource(tPoint &M)
+void tLine::SetSource(const tPoint &M)
 {
 
   fSource = M;
 }
 
-void tLine::SetDir(tVector &P)
+void tLine::SetDir(const tVector &P)
 {
   assert((P.Norm() > eps));
   fDir = P;
 }
 
-double tLine::DistToPoint(tPoint &M)
+double tLine::DistToPoint(const tPoint &M) const
 {
   tVector v;
   tVector t(M, fSource);
@@ -170,7 +169,7 @@ double tLine::DistToPoint(tPoint &M)
   return d;
 }
 
-int tLine::HasPoint(tPoint &M)
+int tLine::HasPoint(const tPoint &M) const
 {
   if (DistToPoint(M) < eps)
     return 1;
@@ -178,7 +177,7 @@ int tLine::HasPoint(tPoint &M)
     return 0;
 }
 
-int tLine::LinePar(tLine &L)
+int tLine::LinePar(const tLine &L) const
 {
   int f = 0;
   tVector v = fDir * L.fDir;
@@ -187,14 +186,14 @@ int tLine::LinePar(tLine &L)
   return f;
 }
 
-tLine &tLine::operator=(tLine &P)
+tLine &tLine::operator=(const tLine &P)
 {
   fSource = P.GSource();
   fDir = P.GDir();
   return *this;
 }
 
-int operator==(tLine &L1, tLine &L2)
+int operator==(const tLine &L1, const tLine &L2)
 {
   if ((L1.LinePar(L2)) && (L1.HasPoint(L2.GSource())))
     return 1;
@@ -202,7 +201,7 @@ int operator==(tLine &L1, tLine &L2)
     return 0;
 }
 
-ostream &operator<<(ostream &output, tLine &P)
+ostream &operator<<(ostream &output, const tLine &P)
 {
   output << "Line: (x- (" << P.GSource().x() << ") )/(" << P.GDir().x() << ") = (y-(" << P.GSource().y() << ") )/(" << P.GDir().y() << ") = (z-(" << P.GSource().z() << ") )/(" << P.GDir().z() << ")" << endl;
   return output;
@@ -218,4 +217,21 @@ istream &operator>>(istream &input, tLine &P)
   cin >> v;
   P.SetDir(v);
   assert(P.correct());
+}
+
+tPoint LineCutPlane(const tLine& l, const tPlane& p)
+{
+    double t, z;
+    z = p.A() * l.Dx() + p.B() * l.Dy() + p.C() * l.Dz();
+    assert(z > eps);
+    t = (-p.D() - p.A() * l.Sx() - p.B() * l.Sy() - p.C() * l.Sz()) / z;
+    tPoint T(l.Dx() * t + l.Sx(), l.Dy() * t + l.Sy(), l.Dz() * t + l.Sz());
+    return T;
+}
+
+tPoint ProjectPointToPlane(const tPoint &M, const tPlane &P)
+{
+    tLine l(M, P);
+    tPoint T{LineCutPlane(l, P)};
+    return T;
 }

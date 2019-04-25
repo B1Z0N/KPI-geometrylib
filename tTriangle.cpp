@@ -1,8 +1,8 @@
 #include "geometry.hpp"
 
-tTriangle::tTriangle(tPoint &A, tPoint &B, tPoint &C, char *NewName)
+tTriangle::tTriangle(const tPoint &A, const tPoint &B, const tPoint &C, char *NewName)
+    : tNamed(NewName)
 {
-  tNamed::tNamed(NewName);
   fA = A;
   fB = B;
   fC = C;
@@ -11,20 +11,20 @@ tTriangle::tTriangle(tPoint &A, tPoint &B, tPoint &C, char *NewName)
 
 tTriangle::tTriangle(double Ax, double Ay, double Az,
                      double Bx, double By, double Bz,
-                     double Cx, double Cy, double Cz, char *NewName) : fA(Ax, Ay, Az), fB(Bx, By, Bz), fC(Cx, Cy, Cz)
+                     double Cx, double Cy, double Cz, char *NewName) 
+                     : tNamed(NewName), fA(Ax, Ay, Az), fB(Bx, By, Bz), fC(Cx, Cy, Cz)
 {
-  tNamed::tNamed(NewName);
   assert(correct());
 }
-tTriangle::tTriangle(tTriangle &T)
+tTriangle::tTriangle(const tTriangle &T)
+    : tNamed(T)
 {
-  tNamed::tNamed(T);
   fA = T.GetA();
   fB = T.GetB();
   fC = T.GetC();
 }
 
-int tTriangle::correct()
+int tTriangle::correct() const
 {
   if (Square() < eps)
     return 0;
@@ -32,43 +32,43 @@ int tTriangle::correct()
     return 1;
 }
 
-double tTriangle::Square()
+double tTriangle::Square() const
 {
   tVector AB(fA, fB), AC(fA, fC), v = AB * AC;
   return (v.Norm() / 2);
 }
 
-tPoint &tTriangle::GetA()
+tPoint tTriangle::GetA() const
 {
   return fA;
 }
-void tTriangle::SetA(tPoint &P)
+void tTriangle::SetA(const tPoint &P)
 {
   fA = P;
   assert(correct());
 }
 
-tPoint &tTriangle::GetB()
+tPoint tTriangle::GetB() const
 {
   return fB;
 }
-void tTriangle::SetB(tPoint &P)
+void tTriangle::SetB(const tPoint &P)
 {
   fB = P;
   assert(correct());
 }
 
-tPoint &tTriangle::GetC()
+tPoint tTriangle::GetC() const
 {
   return fC;
 }
-void tTriangle::SetC(tPoint &P)
+void tTriangle::SetC(const tPoint &P)
 {
   fC = P;
   assert(correct());
 }
 
-tTriangle &tTriangle::operator=(tTriangle &T)
+tTriangle &tTriangle::operator=(const tTriangle &T)
 {
   fA = T.GetA();
   fB = T.GetB();
@@ -76,7 +76,7 @@ tTriangle &tTriangle::operator=(tTriangle &T)
   return *this;
 }
 
-int operator==(tTriangle &T1, tTriangle &T2)
+int operator==(const tTriangle &T1, const tTriangle &T2)
 {
   if ((T1.GetA() == T2.GetA()) && (T1.GetA() == T2.GetA()) && (T1.GetA() == T2.GetA()))
     return 1;
@@ -84,7 +84,7 @@ int operator==(tTriangle &T1, tTriangle &T2)
     return 0;
 }
 
-ostream &operator<<(ostream &output, tTriangle &T)
+ostream &operator<<(ostream &output, const tTriangle &T)
 {
   output << "Triangle: \nA: " << T.GetA() << "B: " << T.GetB() << "C: " << T.GetC();
 
