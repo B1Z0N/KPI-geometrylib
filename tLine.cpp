@@ -1,17 +1,17 @@
 #include "geometry.hpp"
 
 tLine::tLine(double newa, double newb, double newc,
-             double newn, double newm, double newp, char *NewName) : tNamed(NewName), fSource(newa, newb, newc), fDir(newn, newm, newp)
+             double newn, double newm, double newp, char const *NewName) : tNamed(NewName), fSource(newa, newb, newc), fDir(newn, newm, newp)
 {
   assert(correct());
 }
 
-tLine::tLine(const tPoint& S, const tVector& D, char *NewName) : tNamed(NewName), fSource(S), fDir(D)
+tLine::tLine(const tPoint& S, const tVector& D, char const *NewName) : tNamed(NewName), fSource(S), fDir(D)
 {
   assert(correct());
 }
 
-tLine::tLine(const tPlane& v1, const tPlane& v2, char *NewName)
+tLine::tLine(const tPlane& v1, const tPlane& v2, char const *NewName)
   :tNamed(NewName)
 {
   fDir.SetX(v1.B() * v2.C() - v1.C() * v2.B());

@@ -1,6 +1,6 @@
 #include "geometry.hpp"
 
-tPoint::tPoint(double newx, double newy, double newz, char *NewName)
+tPoint::tPoint(double newx, double newy, double newz, char const *NewName)
     : tNamed(NewName)
 {
     fx = newx;

@@ -2,7 +2,7 @@
 
 tVector::tVector() : tPoint() {}
 
-tVector::tVector(double newx, double newy, double newz, char *NewName /*  ="" */)
+tVector::tVector(double newx, double newy, double newz, char const *NewName /*  ="" */)
     : tPoint(newx, newy, newz, NewName) {}
 
 tVector::tVector(const tVector &p)

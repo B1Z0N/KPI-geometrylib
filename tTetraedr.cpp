@@ -1,12 +1,12 @@
 #include "geometry.hpp"
 
-tTetraedr::tTetraedr(const tPoint &V1, const tPoint &V2, const tPoint &V3, const tPoint &S, char *NewName)
+tTetraedr::tTetraedr(const tPoint &V1, const tPoint &V2, const tPoint &V3, const tPoint &S, char const *NewName)
     : tNamed(NewName), fT(V1, V2, V3), fS(S)
 {
   assert(correct());
 }
 
-tTetraedr::tTetraedr(const tTriangle &N, const tPoint &S, char *NewName)
+tTetraedr::tTetraedr(const tTriangle &N, const tPoint &S, char const *NewName)
     : tNamed(NewName), fT(N), fS(S)
 {
   assert(correct());
@@ -15,7 +15,7 @@ tTetraedr::tTetraedr(const tTriangle &N, const tPoint &S, char *NewName)
 tTetraedr::tTetraedr(double ax, double ay, double az,
                      double bx, double by, double bz,
                      double cx, double cy, double cz,
-                     double sx, double sy, double sz, char *NewName) 
+                     double sx, double sy, double sz, char const *NewName) 
                      : tNamed(NewName), fT(ax, ay, az, bx, by, bz, cx, cy, cz), fS(sx, sy, sz)
 {
   assert(correct());
@@ -28,7 +28,7 @@ tTetraedr::tTetraedr(const tTetraedr &T)
   fS = T.GetS();
 }
 
-tTetraedr::tTetraedr(const tPlane &P1, const tPlane &P2, const tPlane &P3, const tPlane &P4, char *NewName)
+tTetraedr::tTetraedr(const tPlane &P1, const tPlane &P2, const tPlane &P3, const tPlane &P4, char const *NewName)
   :tNamed(NewName)
 {
   tPoint S = Cut3Planes(P1, P2, P3), A = Cut3Planes(P1, P2, P4), B = Cut3Planes(P1, P3, P4), C = Cut3Planes(P2, P3, P4);

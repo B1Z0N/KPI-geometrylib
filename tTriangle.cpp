@@ -1,6 +1,6 @@
 #include "geometry.hpp"
 
-tTriangle::tTriangle(const tPoint &A, const tPoint &B, const tPoint &C, char *NewName)
+tTriangle::tTriangle(const tPoint &A, const tPoint &B, const tPoint &C, char const *NewName)
     : tNamed(NewName)
 {
   fA = A;
@@ -11,7 +11,7 @@ tTriangle::tTriangle(const tPoint &A, const tPoint &B, const tPoint &C, char *Ne
 
 tTriangle::tTriangle(double Ax, double Ay, double Az,
                      double Bx, double By, double Bz,
-                     double Cx, double Cy, double Cz, char *NewName) 
+                     double Cx, double Cy, double Cz, char const *NewName) 
                      : tNamed(NewName), fA(Ax, Ay, Az), fB(Bx, By, Bz), fC(Cx, Cy, Cz)
 {
   assert(correct());

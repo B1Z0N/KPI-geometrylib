@@ -1,6 +1,6 @@
 #include "geometry.hpp"
 
-tPlane::tPlane(double newA, double newB, double newC, double newD, char *NewName)
+tPlane::tPlane(double newA, double newB, double newC, double newD, char const *NewName)
     :tNamed(NewName)
 {
   fA = newA;

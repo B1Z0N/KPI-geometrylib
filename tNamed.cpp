@@ -5,10 +5,10 @@ void NormAngle(double &phi)
     phi -= ceil(phi / (2 * Pi)) * 2 * Pi;
 }
 
-tNamed::tNamed(char *NewName)
+tNamed::tNamed(char const *NewName)
 {
 
-    char *N = NewName;
+    char const *N = NewName;
 
     fNameLength = 0;
     while (*N != '\0')

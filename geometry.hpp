@@ -39,7 +39,7 @@ private:
     int fNameLength;
 
 public:
-    tNamed(char *NewName = ""); // default constructor by name
+    tNamed(char const *NewName = ""); // default constructor by name
     tNamed(const tNamed &x);    // copying constructor
     ~tNamed();
 
@@ -61,7 +61,7 @@ private:
     double fx, fy, fz;
 
 public:
-    tPoint(double newx = 0, double newy = 0, double newz = 0, char *NewName = "");
+    tPoint(double newx = 0, double newy = 0, double newz = 0, char const *NewName = "");
     tPoint(const tPoint &); // copying constructor
     double x() const;
     void SetX(double t);
@@ -94,7 +94,7 @@ public:
     class SinglePointError {};
 
     tVector();
-    tVector(double newx, double newy, double newz, char *NewName = "");
+    tVector(double newx, double newy, double newz, char const *NewName = "");
     tVector(const tVector &); // copying constructor
 
     tVector(const tPoint &, const tPoint &);
@@ -134,7 +134,7 @@ private:
     double fA, fB, fC, fD;
 
 public:
-    tPlane(double newA = 0, double newB = 0, double newC = 1, double newD = 0, char *NewName = "a Plane");
+    tPlane(double newA = 0, double newB = 0, double newC = 1, double newD = 0, char const *NewName = "a Plane");
     tPlane(const tPlane &); // copying constructor
 
     tPlane(const tPoint &, const tPoint &, const tPoint &); // plain via 3 points
@@ -176,9 +176,9 @@ private:
 
 public:
     tLine(double newa = 0, double newb = 0, double newc = 0,
-          double newn = 1, double newm = 0, double newp = 0, char *NewName = "a Line");
-    tLine(const tPoint& S, const tVector& D, char *NewName = "a Line");
-    tLine(const tPlane& v1, const tPlane& v2, char *NewName = "a Line"); //creating line as intersect of 2 planes
+          double newn = 1, double newm = 0, double newp = 0, char const *NewName = "a Line");
+    tLine(const tPoint& S, const tVector& D, char const *NewName = "a Line");
+    tLine(const tPlane& v1, const tPlane& v2, char const *NewName = "a Line"); //creating line as intersect of 2 planes
     tLine(const tLine &);                                  //copying constructor
     tLine(const tPoint &, const tPlane &);                             //perpendikular
 
@@ -232,8 +232,8 @@ private:
 public:
     tTriangle(double Ax = 0, double Ay = 0, double Az = 0,
               double Bx = 1, double By = 0, double Bz = 0,
-              double Cx = 0, double Cy = 1, double Cz = 0, char *NewName = "a Triangle");
-    tTriangle(const tPoint &A, const tPoint &B, const tPoint &C, char *NewName = "a Triangle");
+              double Cx = 0, double Cy = 1, double Cz = 0, char const*NewName = "a Triangle");
+    tTriangle(const tPoint &A, const tPoint &B, const tPoint &C, char const *NewName = "a Triangle");
     tTriangle(const tTriangle &T); //copying constructor
     int correct() const;
 
@@ -264,14 +264,14 @@ private:
 
 public:
     tTetraedr(const tPoint &V1, const tPoint &V2, const tPoint &V3,
-              const tPoint &S, char *NewName = "a Tetraedr");
+              const tPoint &S, char const *NewName = "a Tetraedr");
     tTetraedr(const tPlane &, const tPlane &, const tPlane &, const tPlane &,
-              char *NewName = "a Tetraedr"); //tetraedr creating as intersection of 4 planes
-    tTetraedr(const tTriangle &, const tPoint &, char *NewName = "a Tetraedr");
+              char const *NewName = "a Tetraedr"); //tetraedr creating as intersection of 4 planes
+    tTetraedr(const tTriangle &, const tPoint &, char const *NewName = "a Tetraedr");
     tTetraedr(double ax = 0, double ay = 0, double az = 0,
               double bx = 1, double by = 0, double bz = 0,
               double cx = 0, double cy = 1, double cz = 0,
-              double sx = 0, double sy = 0, double sz = 1, char *NewName = "a Tetraedr");
+              double sx = 0, double sy = 0, double sz = 1, char const *NewName = "a Tetraedr");
     tTetraedr(const tTetraedr &); //copying constructor
 
     int correct() const;
