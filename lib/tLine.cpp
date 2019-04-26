@@ -6,6 +6,14 @@ tLine::tLine(double newa, double newb, double newc,
   assert(correct());
 }
 
+tLine::tLine(const tPoint& A, const tPoint& B, char const *NewName)
+  :tNamed(NewName), fSource(A), fDir(A, B)
+{
+  assert(correct());
+}
+
+
+
 tLine::tLine(const tPoint& S, const tVector& D, char const *NewName) : tNamed(NewName), fSource(S), fDir(D)
 {
   assert(correct());

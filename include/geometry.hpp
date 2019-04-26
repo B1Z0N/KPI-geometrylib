@@ -178,6 +178,7 @@ private:
 public:
     tLine(double newa = 0, double newb = 0, double newc = 0,
           double newn = 1, double newm = 0, double newp = 0, char const *NewName = "a Line");
+    tLine(const tPoint& A, const tPoint& B, char const * NewName = "a Line");
     tLine(const tPoint& S, const tVector& D, char const *NewName = "a Line");
     tLine(const tPlane& v1, const tPlane& v2, char const *NewName = "a Line"); //creating line as intersect of 2 planes
     tLine(const tLine &);                                  //copying constructor
