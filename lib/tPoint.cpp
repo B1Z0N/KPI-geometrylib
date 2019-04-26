@@ -1,4 +1,4 @@
-#include "geometry.hpp"
+#include "../include/geometry.hpp"
 
 tPoint::tPoint(double newx, double newy, double newz, char const *NewName)
     : tNamed(NewName)

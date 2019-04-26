@@ -1,4 +1,4 @@
-#include "geometry.hpp"
+#include "../include/geometry.hpp"
 
 tTriangle::tTriangle(const tPoint &A, const tPoint &B, const tPoint &C, char const *NewName)
     : tNamed(NewName)

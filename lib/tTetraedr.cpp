@@ -1,4 +1,4 @@
-#include "geometry.hpp"
+#include "../include/geometry.hpp"
 
 tTetraedr::tTetraedr(const tPoint &V1, const tPoint &V2, const tPoint &V3, const tPoint &S, char const *NewName)
     : tNamed(NewName), fT(V1, V2, V3), fS(S)

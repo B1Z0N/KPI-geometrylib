@@ -1,4 +1,4 @@
-#include "geometry.hpp"
+#include "../include/geometry.hpp"
 
 tLine::tLine(double newa, double newb, double newc,
              double newn, double newm, double newp, char const *NewName) : tNamed(NewName), fSource(newa, newb, newc), fDir(newn, newm, newp)
