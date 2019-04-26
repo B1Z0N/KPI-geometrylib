@@ -1,3 +1,5 @@
+// Uses tLine, tPoint, tPlane, tNamed
+
 #include "../kpigeometry.hpp"
 
 /*
@@ -9,7 +11,7 @@
         1)  (x-1)/2 = (y+3)/4 = (z-5)/3     (denote m)
         2)  x/5 = (y-2)/-1 =(z+1)/2         (denote n)
 
-        Decision:
+        Solution:
 
         Find two planes: the first passes through A and m,
         the second is through A and n. Then the intersection of these planes

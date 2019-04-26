@@ -1,3 +1,5 @@
+// Uses tNamed, tLine, tPoint, tVector, tTriangle
+
 #include "../kpigeometry.hpp"
 
 /*
