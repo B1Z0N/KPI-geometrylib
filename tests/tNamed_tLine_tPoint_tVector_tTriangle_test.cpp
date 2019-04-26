@@ -12,7 +12,7 @@
         We solve this in three ways and compare the answers:
         1. By hand, on a piece of paper
         2. Find the height, with it and the third side find the area
-        3. We use the theorem ... embedded in the square function of the class tTriangle
+        3. We use the Heron's formula used in the square function of the class tTriangle
     
     Русский:
         Задание:
@@ -25,7 +25,7 @@
         Решим тремя способами и сравним ответы:
         1. Самостоятельно, на листочке
         2. Найдем высоту и через нее и третью сторону найдем площадь
-        3. Используем теорему ... встроеную в функцию площади класса tTriangle
+        3. Используем формулу Герона встроеную в функцию площади класса tTriangle
 
 */
 
