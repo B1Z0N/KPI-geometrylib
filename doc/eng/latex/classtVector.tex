@@ -1,0 +1,121 @@
+\hypertarget{classtVector}{}\section{t\+Vector Class Reference}
+\label{classtVector}\index{t\+Vector@{t\+Vector}}
+
+
+Class vector.  
+
+
+
+
+{\ttfamily \#include $<$geometry.\+hpp$>$}
+
+
+
+Inheritance diagram for t\+Vector\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=131pt]{classtVector__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for t\+Vector\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=131pt]{classtVector__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classtVector_1_1SinglePointError}{Single\+Point\+Error}
+\begin{DoxyCompactList}\small\item\em Error class when the vector was set by two equal points. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtVector_ad9dab835ddc33066445f3a00b77a0965}\label{classtVector_ad9dab835ddc33066445f3a00b77a0965}} 
+\hyperlink{classtVector_ad9dab835ddc33066445f3a00b77a0965}{t\+Vector} (double newx, double newy, double newz, char const $\ast$New\+Name=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Vector constructor via point coordinates (the first point is zero) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtVector_aed3e3026b2483d748d4652cd3e79296d}\label{classtVector_aed3e3026b2483d748d4652cd3e79296d}} 
+{\bfseries t\+Vector} (const \hyperlink{classtVector}{t\+Vector} \&)
+\item 
+\mbox{\Hypertarget{classtVector_a7dbffa8e340348bc896c578fd0335364}\label{classtVector_a7dbffa8e340348bc896c578fd0335364}} 
+\hyperlink{classtVector_a7dbffa8e340348bc896c578fd0335364}{t\+Vector} (const \hyperlink{classtPoint}{t\+Point} \&, const \hyperlink{classtPoint}{t\+Point} \&)
+\begin{DoxyCompactList}\small\item\em Vector by two points. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtVector_a6573fc24ec1bfa80c6a5e21c1ea8be62}\label{classtVector_a6573fc24ec1bfa80c6a5e21c1ea8be62}} 
+double \hyperlink{classtVector_a6573fc24ec1bfa80c6a5e21c1ea8be62}{Norm} () const
+\begin{DoxyCompactList}\small\item\em Norm (length) of vector. \end{DoxyCompactList}\item 
+\hyperlink{classtVector}{t\+Vector} \hyperlink{classtVector_a6141302c1bbad21b64e56d93ed0408e5}{Normalize} () const
+\item 
+\mbox{\Hypertarget{classtVector_a95d4d2975910e568033bd2a9d7df9c02}\label{classtVector_a95d4d2975910e568033bd2a9d7df9c02}} 
+void \hyperlink{classtVector_a95d4d2975910e568033bd2a9d7df9c02}{Normalize} ()
+\begin{DoxyCompactList}\small\item\em Normalization of a vector. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtVector_accdeac1e568168edc72c3061f3f2c144}\label{classtVector_accdeac1e568168edc72c3061f3f2c144}} 
+\hyperlink{classtVector}{t\+Vector} \& {\bfseries operator=} (const \hyperlink{classtVector}{t\+Vector} \&)
+\item 
+\mbox{\Hypertarget{classtVector_a15ace59ebe89a3d155a37dff222edfa0}\label{classtVector_a15ace59ebe89a3d155a37dff222edfa0}} 
+\hyperlink{classtVector}{t\+Vector} \& {\bfseries operator$\ast$=} (double)
+\item 
+\mbox{\Hypertarget{classtVector_ace7606b4086cef0c8522a94f43c0ceb4}\label{classtVector_ace7606b4086cef0c8522a94f43c0ceb4}} 
+\hyperlink{classtVector}{t\+Vector} \& {\bfseries operator+=} (const \hyperlink{classtVector}{t\+Vector} \&)
+\item 
+\mbox{\Hypertarget{classtVector_a81439447bad6a912c1e40be8ce5560bb}\label{classtVector_a81439447bad6a912c1e40be8ce5560bb}} 
+\hyperlink{classtVector}{t\+Vector} \& {\bfseries operator-\/=} (const \hyperlink{classtVector}{t\+Vector} \&)
+\item 
+\mbox{\Hypertarget{classtVector_af49e6ba860ee5c38c66ae13f0c9c653f}\label{classtVector_af49e6ba860ee5c38c66ae13f0c9c653f}} 
+\hyperlink{classtVector}{t\+Vector} \& {\bfseries operator$\ast$=} (const \hyperlink{classtVector}{t\+Vector} \&)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtVector_ac2deba186e1ddd047a218201d4cf1c6f}\label{classtVector_ac2deba186e1ddd047a218201d4cf1c6f}} 
+bool {\bfseries operator==} (const \hyperlink{classtVector}{t\+Vector} \&, const \hyperlink{classtVector}{t\+Vector} \&)
+\item 
+\mbox{\Hypertarget{classtVector_ade0381c9b2e5496022391703599e1cfe}\label{classtVector_ade0381c9b2e5496022391703599e1cfe}} 
+\hyperlink{classtVector}{t\+Vector} \& \hyperlink{classtVector_ade0381c9b2e5496022391703599e1cfe}{operator$\ast$} (const \hyperlink{classtVector}{t\+Vector} \&, double)
+\begin{DoxyCompactList}\small\item\em Scalar multiplication on the right. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtVector_a64a031b3695b984a50c362f8127f5bea}\label{classtVector_a64a031b3695b984a50c362f8127f5bea}} 
+\hyperlink{classtVector}{t\+Vector} \& {\bfseries operator$\ast$} (double, const \hyperlink{classtVector}{t\+Vector} \&)
+\item 
+\mbox{\Hypertarget{classtVector_a9915bc8041ae050a433e85aea90f5471}\label{classtVector_a9915bc8041ae050a433e85aea90f5471}} 
+\hyperlink{classtVector}{t\+Vector} \& \hyperlink{classtVector_a9915bc8041ae050a433e85aea90f5471}{operator+} (const \hyperlink{classtVector}{t\+Vector} \&, const \hyperlink{classtVector}{t\+Vector} \&)
+\begin{DoxyCompactList}\small\item\em Sum of vectors. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtVector_ab805cb8e1108272d31808bf4d258ba15}\label{classtVector_ab805cb8e1108272d31808bf4d258ba15}} 
+\hyperlink{classtVector}{t\+Vector} \& \hyperlink{classtVector_ab805cb8e1108272d31808bf4d258ba15}{operator-\/} (const \hyperlink{classtVector}{t\+Vector} \&, const \hyperlink{classtVector}{t\+Vector} \&)
+\begin{DoxyCompactList}\small\item\em Vectors difference. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtVector_abec310e2c4d30878d11d0b2f5d02cad4}\label{classtVector_abec310e2c4d30878d11d0b2f5d02cad4}} 
+\hyperlink{classtVector}{t\+Vector} \& \hyperlink{classtVector_abec310e2c4d30878d11d0b2f5d02cad4}{operator$\ast$} (const \hyperlink{classtVector}{t\+Vector} \&, const \hyperlink{classtVector}{t\+Vector} \&)
+\begin{DoxyCompactList}\small\item\em Vector product of vectors. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtVector_afcc0074f806c5d4f45eb32158292ca8c}\label{classtVector_afcc0074f806c5d4f45eb32158292ca8c}} 
+ostream \& {\bfseries operator$<$$<$} (ostream \&, const \hyperlink{classtVector}{t\+Vector} \&)
+\item 
+\mbox{\Hypertarget{classtVector_a40b256a9f985011f794517f158deffe5}\label{classtVector_a40b256a9f985011f794517f158deffe5}} 
+istream \& {\bfseries operator$>$$>$} (istream \&, \hyperlink{classtVector}{t\+Vector} \&)
+\item 
+\mbox{\Hypertarget{classtVector_a79cac88f76447395991d4dde1f173bfa}\label{classtVector_a79cac88f76447395991d4dde1f173bfa}} 
+double \hyperlink{classtVector_a79cac88f76447395991d4dde1f173bfa}{operator,} (const \hyperlink{classtVector}{t\+Vector} \&, const \hyperlink{classtVector}{t\+Vector} \&)
+\begin{DoxyCompactList}\small\item\em Dot product of vectors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class vector. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classtVector_a6141302c1bbad21b64e56d93ed0408e5}\label{classtVector_a6141302c1bbad21b64e56d93ed0408e5}} 
+\index{t\+Vector@{t\+Vector}!Normalize@{Normalize}}
+\index{Normalize@{Normalize}!t\+Vector@{t\+Vector}}
+\subsubsection{\texorpdfstring{Normalize()}{Normalize()}}
+{\footnotesize\ttfamily \hyperlink{classtVector}{t\+Vector} t\+Vector\+::\+Normalize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Normalization of a vector (for constant vectors) \begin{DoxyReturn}{Returns}
+normalized vector 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/b1zon/\+Desktop/cpp/\+K\+P\+I-\/geometrylib/include/geometry.\+hpp\end{DoxyCompactItemize}

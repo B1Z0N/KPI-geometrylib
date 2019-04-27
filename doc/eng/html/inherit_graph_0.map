@@ -1,0 +1,9 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classtNamed.html" title="Common base class for all other classes. " alt="" coords="5,107,73,133"/>
+<area shape="rect" id="node2" href="$classtLine.html" title="Line class. " alt="" coords="133,5,184,32"/>
+<area shape="rect" id="node3" href="$classtPlane.html" title="Plane class. " alt="" coords="129,56,188,83"/>
+<area shape="rect" id="node4" href="$classtPoint.html" title="Point class. " alt="" coords="131,107,187,133"/>
+<area shape="rect" id="node6" href="$classtTetraedr.html" title="class of the Tetrahedron &#45; triangle pyramid " alt="" coords="121,157,196,184"/>
+<area shape="rect" id="node7" href="$classtTriangle.html" title="Triangle class. " alt="" coords="123,208,195,235"/>
+<area shape="rect" id="node5" href="$classtVector.html" title="Class vector. " alt="" coords="244,107,308,133"/>
+</map>

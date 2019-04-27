@@ -1,0 +1,98 @@
+\hypertarget{classtTriangle}{}\section{t\+Triangle Class Reference}
+\label{classtTriangle}\index{t\+Triangle@{t\+Triangle}}
+
+
+Triangle class.  
+
+
+
+
+{\ttfamily \#include $<$geometry.\+hpp$>$}
+
+
+
+Inheritance diagram for t\+Triangle\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=134pt]{classtTriangle__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for t\+Triangle\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=134pt]{classtTriangle__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtTriangle_a7d9deae65de86bc7dd8c4659921ab7e4}\label{classtTriangle_a7d9deae65de86bc7dd8c4659921ab7e4}} 
+\hyperlink{classtTriangle_a7d9deae65de86bc7dd8c4659921ab7e4}{t\+Triangle} (double Ax=0, double Ay=0, double Az=0, double Bx=1, double By=0, double Bz=0, double Cx=0, double Cy=1, double Cz=0, char const $\ast$New\+Name=\char`\"{}a Triangle\char`\"{})
+\begin{DoxyCompactList}\small\item\em Constructor by vertices coordinates and name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtTriangle_a083202f8a4ee5ad43997f7dfd02aa903}\label{classtTriangle_a083202f8a4ee5ad43997f7dfd02aa903}} 
+\hyperlink{classtTriangle_a083202f8a4ee5ad43997f7dfd02aa903}{t\+Triangle} (const \hyperlink{classtPoint}{t\+Point} \&A, const \hyperlink{classtPoint}{t\+Point} \&B, const \hyperlink{classtPoint}{t\+Point} \&C, char const $\ast$New\+Name=\char`\"{}a Triangle\char`\"{})
+\begin{DoxyCompactList}\small\item\em Three-\/point constructor (vertices) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtTriangle_a64a9bc79b605a895405862df622b2508}\label{classtTriangle_a64a9bc79b605a895405862df622b2508}} 
+{\bfseries t\+Triangle} (const \hyperlink{classtTriangle}{t\+Triangle} \&T)
+\item 
+bool \hyperlink{classtTriangle_a21ecf9d970912497eca5009d6965aa54}{correct} () const
+\item 
+\mbox{\Hypertarget{classtTriangle_a75c20d7c45085d9d3b510c4a457c1daa}\label{classtTriangle_a75c20d7c45085d9d3b510c4a457c1daa}} 
+\hyperlink{classtPoint}{t\+Point} {\bfseries GetA} () const
+\item 
+\mbox{\Hypertarget{classtTriangle_a2a6bbddf53b623165d2fba195287612b}\label{classtTriangle_a2a6bbddf53b623165d2fba195287612b}} 
+void {\bfseries SetA} (const \hyperlink{classtPoint}{t\+Point} \&)
+\item 
+\mbox{\Hypertarget{classtTriangle_a243e7cc75b1a80d7a4901927d87c3161}\label{classtTriangle_a243e7cc75b1a80d7a4901927d87c3161}} 
+\hyperlink{classtPoint}{t\+Point} {\bfseries GetB} () const
+\item 
+\mbox{\Hypertarget{classtTriangle_a6c694e33bc770411e93a43fd4066e198}\label{classtTriangle_a6c694e33bc770411e93a43fd4066e198}} 
+void {\bfseries SetB} (const \hyperlink{classtPoint}{t\+Point} \&)
+\item 
+\mbox{\Hypertarget{classtTriangle_a1f282bae86e8a7c0e0d03c1daa1203cf}\label{classtTriangle_a1f282bae86e8a7c0e0d03c1daa1203cf}} 
+\hyperlink{classtPoint}{t\+Point} {\bfseries GetC} () const
+\item 
+\mbox{\Hypertarget{classtTriangle_a918d25521066423811a5c8c6c065877d}\label{classtTriangle_a918d25521066423811a5c8c6c065877d}} 
+void {\bfseries SetC} (const \hyperlink{classtPoint}{t\+Point} \&)
+\item 
+\mbox{\Hypertarget{classtTriangle_a97950f707d11df41c330fe3c9f87eefc}\label{classtTriangle_a97950f707d11df41c330fe3c9f87eefc}} 
+double \hyperlink{classtTriangle_a97950f707d11df41c330fe3c9f87eefc}{Square} () const
+\begin{DoxyCompactList}\small\item\em Square of triangle. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtTriangle_a130f7ecd50933a9dbcc1914fc4e31ac0}\label{classtTriangle_a130f7ecd50933a9dbcc1914fc4e31ac0}} 
+\hyperlink{classtTriangle}{t\+Triangle} \& {\bfseries operator=} (const \hyperlink{classtTriangle}{t\+Triangle} \&)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtTriangle_a95e318dd03b5dd2124a3b52fa6e5a398}\label{classtTriangle_a95e318dd03b5dd2124a3b52fa6e5a398}} 
+bool {\bfseries operator==} (const \hyperlink{classtTriangle}{t\+Triangle} \&, const \hyperlink{classtTriangle}{t\+Triangle} \&)
+\item 
+\mbox{\Hypertarget{classtTriangle_a52e0f64418a864f97e0ef833d3c054c0}\label{classtTriangle_a52e0f64418a864f97e0ef833d3c054c0}} 
+ostream \& {\bfseries operator$<$$<$} (ostream \&, const \hyperlink{classtTriangle}{t\+Triangle} \&)
+\item 
+\mbox{\Hypertarget{classtTriangle_a5b1b8bacb64f207e4d8c9bc5513c8335}\label{classtTriangle_a5b1b8bacb64f207e4d8c9bc5513c8335}} 
+istream \& {\bfseries operator$>$$>$} (istream \&, \hyperlink{classtTriangle}{t\+Triangle} \&)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Triangle class. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classtTriangle_a21ecf9d970912497eca5009d6965aa54}\label{classtTriangle_a21ecf9d970912497eca5009d6965aa54}} 
+\index{t\+Triangle@{t\+Triangle}!correct@{correct}}
+\index{correct@{correct}!t\+Triangle@{t\+Triangle}}
+\subsubsection{\texorpdfstring{correct()}{correct()}}
+{\footnotesize\ttfamily bool t\+Triangle\+::correct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Check if the coefficients in the equation are not too small (internal function) 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/b1zon/\+Desktop/cpp/\+K\+P\+I-\/geometrylib/include/geometry.\+hpp\end{DoxyCompactItemize}

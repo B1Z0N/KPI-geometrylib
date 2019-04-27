@@ -1,0 +1,8 @@
+<map id="tNamed" name="tNamed">
+<area shape="rect" id="node2" href="$classtLine.html" title="Line class. " alt="" coords="5,80,56,107"/>
+<area shape="rect" id="node3" href="$classtPlane.html" title="Plane class. " alt="" coords="80,80,139,107"/>
+<area shape="rect" id="node4" href="$classtPoint.html" title="Point class. " alt="" coords="163,80,219,107"/>
+<area shape="rect" id="node6" href="$classtTetraedr.html" title="class of the Tetrahedron &#45; triangle pyramid " alt="" coords="243,80,317,107"/>
+<area shape="rect" id="node7" href="$classtTriangle.html" title="Triangle class. " alt="" coords="341,80,413,107"/>
+<area shape="rect" id="node5" href="$classtVector.html" title="Class vector. " alt="" coords="159,155,223,181"/>
+</map>

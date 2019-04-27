@@ -1,0 +1,96 @@
+\hypertarget{classtPoint}{}\section{t\+Point Class Reference}
+\label{classtPoint}\index{t\+Point@{t\+Point}}
+
+
+Point class.  
+
+
+
+
+{\ttfamily \#include $<$geometry.\+hpp$>$}
+
+
+
+Inheritance diagram for t\+Point\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=131pt]{classtPoint__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for t\+Point\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=131pt]{classtPoint__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtPoint_a0f7b95c63108ff1996f993f76208e4ee}\label{classtPoint_a0f7b95c63108ff1996f993f76208e4ee}} 
+\hyperlink{classtPoint_a0f7b95c63108ff1996f993f76208e4ee}{t\+Point} (double newx=0, double newy=0, double newz=0, char const $\ast$New\+Name=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Three point and name constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtPoint_acd4d6c37b06415e10f037c29eeeb35d2}\label{classtPoint_acd4d6c37b06415e10f037c29eeeb35d2}} 
+{\bfseries t\+Point} (const \hyperlink{classtPoint}{t\+Point} \&)
+\item 
+\mbox{\Hypertarget{classtPoint_adfae7cc9253854321270b51acedcbc4d}\label{classtPoint_adfae7cc9253854321270b51acedcbc4d}} 
+double {\bfseries x} () const
+\item 
+\mbox{\Hypertarget{classtPoint_ae7163ff0afe728da1be12f25844647e1}\label{classtPoint_ae7163ff0afe728da1be12f25844647e1}} 
+void {\bfseries SetX} (double t)
+\item 
+\mbox{\Hypertarget{classtPoint_a3386f8a21f2f962327ee32b2f77f52ee}\label{classtPoint_a3386f8a21f2f962327ee32b2f77f52ee}} 
+double {\bfseries y} () const
+\item 
+\mbox{\Hypertarget{classtPoint_ad9fb0cb6d30b24d7478a1d585fe4a491}\label{classtPoint_ad9fb0cb6d30b24d7478a1d585fe4a491}} 
+void {\bfseries SetY} (double t)
+\item 
+\mbox{\Hypertarget{classtPoint_a14ad204b83379ad64b0c8ad6af6c4eab}\label{classtPoint_a14ad204b83379ad64b0c8ad6af6c4eab}} 
+double {\bfseries z} () const
+\item 
+\mbox{\Hypertarget{classtPoint_a8da9a00e6d00624721b3dd9bb7a0df79}\label{classtPoint_a8da9a00e6d00624721b3dd9bb7a0df79}} 
+void {\bfseries SetZ} (double t)
+\item 
+\mbox{\Hypertarget{classtPoint_ae712421b8ca24bf96a5516acaf773624}\label{classtPoint_ae712421b8ca24bf96a5516acaf773624}} 
+double \hyperlink{classtPoint_ae712421b8ca24bf96a5516acaf773624}{Dist\+To} (const \hyperlink{classtPoint}{t\+Point} \&P) const
+\begin{DoxyCompactList}\small\item\em Distance to another point. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtPoint_ab85d062451a895276bcd60bdba888768}\label{classtPoint_ab85d062451a895276bcd60bdba888768}} 
+void \hyperlink{classtPoint_ab85d062451a895276bcd60bdba888768}{Move} (const \hyperlink{classtPoint}{t\+Point} \&P)
+\begin{DoxyCompactList}\small\item\em Move point. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtPoint_a13e8f123791c52d15a9fc631ac47a7fe}\label{classtPoint_a13e8f123791c52d15a9fc631ac47a7fe}} 
+void \hyperlink{classtPoint_a13e8f123791c52d15a9fc631ac47a7fe}{Turn\+X\+Point} (double phi)
+\begin{DoxyCompactList}\small\item\em Rotate point in YoZ plane. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtPoint_a7509d78eadd35f4e48da991927bab368}\label{classtPoint_a7509d78eadd35f4e48da991927bab368}} 
+void \hyperlink{classtPoint_a7509d78eadd35f4e48da991927bab368}{Turn\+Y\+Point} (double phi)
+\begin{DoxyCompactList}\small\item\em Rotate point in XoZ plane. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtPoint_aea130545fd9a4a137901c483d2b9570f}\label{classtPoint_aea130545fd9a4a137901c483d2b9570f}} 
+void \hyperlink{classtPoint_aea130545fd9a4a137901c483d2b9570f}{Turn\+Z\+Point} (double phi)
+\begin{DoxyCompactList}\small\item\em Rotate a point in the XoY plane. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtPoint_a01916af640294762c1946f10c03b06ec}\label{classtPoint_a01916af640294762c1946f10c03b06ec}} 
+\hyperlink{classtPoint}{t\+Point} \& {\bfseries operator=} (const \hyperlink{classtPoint}{t\+Point} \&)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtPoint_a596f2f80bfe55efa7074306033e5656c}\label{classtPoint_a596f2f80bfe55efa7074306033e5656c}} 
+bool {\bfseries operator==} (const \hyperlink{classtPoint}{t\+Point} \&, const \hyperlink{classtPoint}{t\+Point} \&)
+\item 
+\mbox{\Hypertarget{classtPoint_aca0717ecb2dfcd55c8b0a6eb56c6c16b}\label{classtPoint_aca0717ecb2dfcd55c8b0a6eb56c6c16b}} 
+ostream \& {\bfseries operator$<$$<$} (ostream \&, const \hyperlink{classtPoint}{t\+Point} \&)
+\item 
+\mbox{\Hypertarget{classtPoint_a21e934e5bfe986e0b39885970a361047}\label{classtPoint_a21e934e5bfe986e0b39885970a361047}} 
+istream \& {\bfseries operator$>$$>$} (istream \&, \hyperlink{classtPoint}{t\+Point} \&)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Point class. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/b1zon/\+Desktop/cpp/\+K\+P\+I-\/geometrylib/include/geometry.\+hpp\end{DoxyCompactItemize}

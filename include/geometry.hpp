@@ -1,12 +1,12 @@
 #ifndef __GEOMETRY_LIB_INCLUSION_MACRO
 #define __GEOMETRY_LIB_INCLUSION_MACRO
 
-/** @brief Библиотека для работы с геометрическими обьектами.
+/** @brief Library for working with geometric objects
  *  @detailed Классы: 
- *  точка, прямая, плоскость, вектор, треугольник, тетраэдр.
+ *  point, line, plane, vector, triangle, tetrahedron.
  *  
- *  @author Написано Самариным М. С. Обновлено Федурком Н. А.
- *  @date Апрель 2019
+ *  @author Written by Samarin M. Updated by Fedurko N. A.
+ *  @date April 2019
  */
 
 #include <memory>
@@ -23,14 +23,14 @@ const double eps = 1e-8,
              Pi = M_PI;
 
 void NormAngle(double &phi);
-/// @brief Определитель матрицы 2х2
+/// @brief 2x2 matrix determinant
 double Deter2(double a, double b,
               double c, double d);
-/// @brief Определитель матрицы 3х3
+/// @brief 3x3 matrix determinant
 double Deter3(double a, double b, double c,
               double d, double e, double f,
               double g, double h, double i);
-/// @brief Определитель матрицы 4х4
+/// @brief 4x4 matrix determinant
 double Deter4(double a, double b, double c, double d,
               double e, double f, double g, double h,
               double i, double j, double k, double l,
@@ -38,17 +38,17 @@ double Deter4(double a, double b, double c, double d,
 
 //---------------------------tNamed-------------------------------------
 
-/// Общий базовый класс для всех остальных классов
+/// Common base class for all other classes
 class tNamed
 {
 private:
-    /// Имя фигуры
+    /// Shape name
     char *fName;
-    /// Длинна имени
+    /// Name length
     int fNameLength;
 
 public:
-    /// Конструктор по имени
+    /// Constructor by name
     tNamed(char const *NewName = "");
     tNamed(const tNamed &x);
     ~tNamed();
@@ -60,22 +60,22 @@ public:
     tNamed &operator=(const tNamed &);
 };
 
-/// Возвратить знак числа
+/// Return the sign of the number
 char sign(double);
 
 //----------------------------------------------------------------------------
 
 //-----------------------------POINT-----------------------------------------
-/// Класс точки
+/// Point class
 class tPoint : public tNamed
 {
 
 private:
-    /// Координаты
+    /// Coordinates
     double fx, fy, fz;
 
 public:
-    /// Конструктор по трем точкам и имени
+    /// Three point and name constructor
     tPoint(double newx = 0, double newy = 0, double newz = 0, char const *NewName = "");
     tPoint(const tPoint &);
     double x() const;
@@ -85,16 +85,16 @@ public:
     double z() const;
     void SetZ(double t);
 
-    /// Расстоаяние до другой точки
-    double DistTo(const tPoint &P) const; //distance to other point
+    /// Distance to another point
+    double DistTo(const tPoint &P) const;
 
-    /// Переместить точку
+    /// Move point
     void Move(const tPoint &P);
-    /// Повернуть точку в плоскости YoZ
+    /// Rotate point in YoZ plane
     void TurnXPoint(double phi);
-    /// Повернуть точку в плоскости XoZ
+    /// Rotate point in XoZ plane
     void TurnYPoint(double phi);
-    /// Повернуть точку в плоскости XoY
+    /// Rotate a point in the XoY plane
     void TurnZPoint(double phi);
 
     tPoint &operator=(const tPoint &);
@@ -107,43 +107,43 @@ public:
 //---------------------------------------------------------------------------
 
 //--------------------------------VECTOR-------------------------------------
-/// Класс вектора
+/// Class vector
 class tVector : public tPoint
 {
 
 public:
-    /// Класс ошибки, когда вектор задали двумя равными точками
+    /// Error class when the vector was set by two equal points
     class SinglePointError {};
 
     tVector();
-    /// Конструктор вектора через координаты точки (первая точка берется нуль)
+    /// Vector constructor via point coordinates (the first point is zero)
     tVector(double newx, double newy, double newz, char const *NewName = "");
     tVector(const tVector &);
 
-    /// Вектор через две точки
+    /// Vector by two points
     tVector(const tPoint &, const tPoint &);
 
-    /// Норма(длинна) вектора
+    /// Norm (length) of vector
     double Norm() const;
-    /// Нормировка вектора (для константых векторов)
-    /// @return нормированый вектор
+    /// Normalization of a vector (for constant vectors)
+    /// @return normalized vector
     tVector Normalize() const;
-    /// Нормировка вектора
+    /// Normalization of a vector
     void Normalize();
 
     tVector &operator=(const tVector &);
     friend bool operator==(const tVector &, const tVector &);
 
-    /// Умножение на скаляр справа
+    /// Scalar multiplication on the right
     friend tVector &operator*(const tVector &, double);
-    // И слева
+    // And on the left
     friend tVector &operator*(double, const tVector &);
 
-    /// Сумма векторов
+    /// Sum of vectors
     friend tVector &operator+(const tVector &, const tVector &);
-    /// Разница векторов
+    /// Vectors difference
     friend tVector &operator-(const tVector &, const tVector &); 
-    /// Вектороное произведение векторов
+    /// Vector product of vectors
     friend tVector &operator*(const tVector &, const tVector &);
 
     tVector &operator*=(double);
@@ -153,7 +153,7 @@ public:
 
     friend ostream &operator<<(ostream &, const tVector &);
     friend istream &operator>>(istream &, tVector &);
-    /// Скалярное произведение векторов
+    /// Dot product of vectors
     friend double operator,(const tVector &, const tVector &); 
 };
 
@@ -161,20 +161,20 @@ public:
 
 //----------------------------PLANE------------------------------------------
 
-/// Класс плоскости
+/// Plane class
 class tPlane : public tNamed
 {
 
 private:
-    /// Коефициенты уравнения плоскости
+    /// Fields of plane equation
     double fA, fB, fC, fD;
 
 public:
-    /// Конструктор по коефициентам
+    /// Constructor by fields
     tPlane(double newA = 0, double newB = 0, double newC = 1, double newD = 0, char const *NewName = "a Plane");
     tPlane(const tPlane &);
 
-    /// Конструктор через три точки
+    /// Constructor by three points
     tPlane(const tPoint &, const tPoint &, const tPoint &);
 
     double A() const;
@@ -186,21 +186,21 @@ public:
     double D() const;
     void setD(double);
 
-    /// Установить новые значения коефициентов
+    /// Set new fields values
     void setnew(double, double, double, double);
 
-    /// Проверить, не слишком ли малы коефициенты в уравнении
-    /// (внутренняя функция) 
+    /// Check if the coefficients in the equation are not too small
+    /// (internal function)
     bool correct() const;
-    /// Нормировка плоскости
+    /// Normalization of the plane
     void Normalize();
-    /// Нормировка плоскости (для константых плоскостей)
-    /// @return нормированую плоскость
+    /// Normalization of the plane (for constant planes)
+    /// @return normalized plane
     tPlane Normalize() const;
 
-    /// Проверить принадлежит ли точка плоскости
+    /// Check whether the point is on the plane
     bool HasPoint(const tPoint &) const;
-    /// Найти расстояние от точки до плоскости
+    /// Find the distance from the point to the plane
     double DistToPoint(const tPoint &) const;
 
     tPlane &operator=(const tPlane &);
@@ -210,54 +210,54 @@ public:
     friend istream &operator>>(istream &, tPlane &);
 };
 
-/// Найти точку пересечения трех плоскостей
+/// Find the intersection point of three planes
 tPoint Cut3Planes(const tPlane &a, const tPlane &b, const tPlane &c);
-/// Найти проекцию точки на плоскость
+/// Find the projection of the point on the plane
 tPoint ProjectPointToPlane(const tPoint &M, const tPlane &P);
 //---------------------------------------------------------------------------
 
 //----------------------------LINE-------------------------------------------
 
-/// Класс прямой линии
+/// Line class
 class tLine : public tNamed
 {
 private:
     /// Точка через которую она проходит
     tPoint fSource;
-    /// Вектор направления
+    /// Direction Vector
     tVector fDir;
 
 public:
-    /** @brief Конструктор через коефициенты 
-     *  @detailed Уравнение прямой в пространстве:
+    /** @brief Constructor by fields
+     *  @detailed Equation of a line in 3d:
      *  (x-a)/n = (x-b)/m = (x-c)/p
      * 
-     *  Ввести коефициенты в таком порядке:
-     *  a, b, c (сначала верхние), n, m, p (потом нижние)
+     *  Enter the fields in this order:
+     *  a, b, c (up first), n, m, p (then down)
      */
     tLine(double newa = 0, double newb = 0, double newc = 0,
           double newn = 1, double newm = 0, double newp = 0, char const *NewName = "a Line");
-    /// Конструктор через две точки и имя
+    /// Constructor by two points and name
     tLine(const tPoint& A, const tPoint& B, char const * NewName = "a Line");
-    /// Конструктор через точку, вектор направления и имя
+    /// Constructor by point, direction vector and name
     tLine(const tPoint& S, const tVector& D, char const *NewName = "a Line");
-    /// Конструктор чере пересечение двух плоскостей и имя
+    /// Constructor by the intersection of two planes and the name
     tLine(const tPlane& v1, const tPlane& v2, char const *NewName = "a Line");
     tLine(const tLine &);
-    /// Конструктор прямой как перпендикуляр точки к плоскости
+    /// Constructor of the line as a perpendicular point to the plane
     tLine(const tPoint &, const tPlane &);
 
-    /// Установить новые значения коефициентов
+    /// Set new fields values
     void setnew(double, double, double,
                 double, double, double);
 
-    /// Проверить, не слишком ли малы коефициенты в уравнении
-    /// (внутренняя функция) 
+    /// Check if the coefficients in the equation are not too small
+    /// (internal function)
     bool correct() const;
 
-    /// Получить вектор направления
+    /// Get direction vector
     tVector GDir() const;
-    /// Получить начальную точку
+    /// Get starting point
     tPoint GSource() const;
 
     double Sx() const;
@@ -273,16 +273,16 @@ public:
     double Dz() const;
     void SetDz(double);
 
-    /// Установить начальную точку
+    /// Set the starting point
     void SetSource(const tPoint &);
-    /// Установить вектор направления    
+    /// Set Direction Vector  
     void SetDir(const tVector &);
 
-    /// Проверить принадлежит ли точка прямой
+    /// Check whether the point is on the line
     bool HasPoint(const tPoint &) const;
-    /// Найти расстояние от точки к прямой
+    /// Find the distance from point to line
     double DistToPoint(const tPoint &) const;
-    /// Проверить прямые на паралельность
+    /// Check lines for parallelism
     bool LinePar(const tLine &) const;
 
     tLine &operator=(const tLine &);
@@ -291,30 +291,30 @@ public:
     friend ostream &operator<<(ostream &, const tLine &);
     friend istream &operator>>(istream &, tLine &);
 };
-/// Найти точку пересечения прямой и плоскости
+/// Find the intersection point of a line and a plane
 tPoint LineCutPlane(const tLine& l, const tPlane& p);
 //----------------------------------------------------------------------------
 
 //--------------------------TRIANGLE-----------------------------------------
 
-/// Класс треугольника
+/// Triangle class
 class tTriangle : public tNamed
 {
 
 private:
-    /// Координаты вершин
+    /// Vertex coordinates
     tPoint fA, fB, fC;
 
 public:
-    /// Конструктор по координатам вершин и имени
+    /// Constructor by vertices coordinates and name
     tTriangle(double Ax = 0, double Ay = 0, double Az = 0,
               double Bx = 1, double By = 0, double Bz = 0,
               double Cx = 0, double Cy = 1, double Cz = 0, char const*NewName = "a Triangle");
-    /// Конструктор по трем точкам(вершинам)
+    /// Three-point constructor (vertices)
     tTriangle(const tPoint &A, const tPoint &B, const tPoint &C, char const *NewName = "a Triangle");
     tTriangle(const tTriangle &T);
-    /// Проверить, не слишком ли малы коефициенты в уравнении
-    /// (внутренняя функция) 
+    /// Check if the coefficients in the equation are not too small
+    /// (internal function)
     bool correct() const;
 
     tPoint GetA() const;
@@ -324,8 +324,8 @@ public:
     tPoint GetC() const;
     void SetC(const tPoint &);
 
-    /// Найти площадь треугольника
-    double Square() const; //square of triangle
+    /// Square of triangle
+    double Square() const; 
 
     tTriangle &operator=(const tTriangle &);
     friend bool operator==(const tTriangle &, const tTriangle &);
@@ -337,32 +337,32 @@ public:
 //---------------------------------------------------------------------------
 
 //-----------------------------TETRAEDR--------------------------------------
-/// Класс тетраэдра - трегуольной пирамиды
+/// class of the Tetrahedron - triangle pyramid
 class tTetraedr : public tNamed
 {
 private:
-    /// Треугольник основы
+    /// Triangle as a base of tetrahedron
     tTriangle fT;
-    /// Четвертая вершина(над основой)
+    /// Fourth vertice, above the base
     tPoint fS;
 
 public:
-    /// Конструктор по четырем точкам и имени
+    /// Constructor by four vertices and a name
     tTetraedr(const tPoint &V1, const tPoint &V2, const tPoint &V3,
               const tPoint &S, char const *NewName = "a Tetraedr");
-    /// Конструктор по четырем плоскостям и  имени
+    /// Constructor by four planes and name
     tTetraedr(const tPlane &, const tPlane &, const tPlane &, const tPlane &,
               char const *NewName = "a Tetraedr");
-    /// Конструктор по треугольнику(основе) и точке(четвертой вершине) и имени
+    ///  Constructor by triangle(base), point(4th vertice) and a name
     tTetraedr(const tTriangle &, const tPoint &, char const *NewName = "a Tetraedr");
-    /// Конструктор по координатам четырех точек и имени
+    /// Four-point coordinates and name constructor
     tTetraedr(double ax = 0, double ay = 0, double az = 0,
               double bx = 1, double by = 0, double bz = 0,
               double cx = 0, double cy = 1, double cz = 0,
               double sx = 0, double sy = 0, double sz = 1, char const *NewName = "a Tetraedr");
     tTetraedr(const tTetraedr &);
-    /// Проверить, не слишком ли малы коефициенты в уравнении
-    /// (внутренняя функция) 
+    /// Check if the coefficients in the equation are not too small
+    /// (internal function) 
     bool correct() const;
 
     tPoint GetS() const;
@@ -370,7 +370,7 @@ public:
     tTriangle GetT() const;
     void SetT(const tTriangle &);
 
-    /// Объём тетраэдра
+    /// Tetrahedron volume
     double Volume() const;
 
     tTetraedr &operator=(const tTetraedr &);

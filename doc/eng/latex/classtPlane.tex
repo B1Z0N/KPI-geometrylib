@@ -1,0 +1,124 @@
+\hypertarget{classtPlane}{}\section{t\+Plane Class Reference}
+\label{classtPlane}\index{t\+Plane@{t\+Plane}}
+
+
+Plane class.  
+
+
+
+
+{\ttfamily \#include $<$geometry.\+hpp$>$}
+
+
+
+Inheritance diagram for t\+Plane\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=131pt]{classtPlane__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for t\+Plane\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=131pt]{classtPlane__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtPlane_a82b8ca291bcb680731ea06067267bfe3}\label{classtPlane_a82b8ca291bcb680731ea06067267bfe3}} 
+\hyperlink{classtPlane_a82b8ca291bcb680731ea06067267bfe3}{t\+Plane} (double newA=0, double newB=0, double newC=1, double newD=0, char const $\ast$New\+Name=\char`\"{}a Plane\char`\"{})
+\begin{DoxyCompactList}\small\item\em Constructor by fields. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtPlane_a18e2a0d542a83f8f250b70b9bda9c9c9}\label{classtPlane_a18e2a0d542a83f8f250b70b9bda9c9c9}} 
+{\bfseries t\+Plane} (const \hyperlink{classtPlane}{t\+Plane} \&)
+\item 
+\mbox{\Hypertarget{classtPlane_a7232f7e46cd8e8ae4dfec128dd277b1f}\label{classtPlane_a7232f7e46cd8e8ae4dfec128dd277b1f}} 
+\hyperlink{classtPlane_a7232f7e46cd8e8ae4dfec128dd277b1f}{t\+Plane} (const \hyperlink{classtPoint}{t\+Point} \&, const \hyperlink{classtPoint}{t\+Point} \&, const \hyperlink{classtPoint}{t\+Point} \&)
+\begin{DoxyCompactList}\small\item\em Constructor by three points. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtPlane_a4ddac807c5347da56a1300b7fb7b577f}\label{classtPlane_a4ddac807c5347da56a1300b7fb7b577f}} 
+double {\bfseries A} () const
+\item 
+\mbox{\Hypertarget{classtPlane_a60ebb124c3ff083af76de458971844a6}\label{classtPlane_a60ebb124c3ff083af76de458971844a6}} 
+void {\bfseries setA} (double)
+\item 
+\mbox{\Hypertarget{classtPlane_abf7d8f068035f46ca31c5da6566e7732}\label{classtPlane_abf7d8f068035f46ca31c5da6566e7732}} 
+double {\bfseries B} () const
+\item 
+\mbox{\Hypertarget{classtPlane_ae6241f12630da93be209c38e1472119e}\label{classtPlane_ae6241f12630da93be209c38e1472119e}} 
+void {\bfseries setB} (double)
+\item 
+\mbox{\Hypertarget{classtPlane_ac2a72791a7336b7c56afe1f5d396c52b}\label{classtPlane_ac2a72791a7336b7c56afe1f5d396c52b}} 
+double {\bfseries C} () const
+\item 
+\mbox{\Hypertarget{classtPlane_a4ad41ca722a6da81d3758631f67db13b}\label{classtPlane_a4ad41ca722a6da81d3758631f67db13b}} 
+void {\bfseries setC} (double)
+\item 
+\mbox{\Hypertarget{classtPlane_a962da3f8ce1289d44438ad8f7ffbbbfa}\label{classtPlane_a962da3f8ce1289d44438ad8f7ffbbbfa}} 
+double {\bfseries D} () const
+\item 
+\mbox{\Hypertarget{classtPlane_aab58e6aa9e9e941a12d2aa5dd85cbc8c}\label{classtPlane_aab58e6aa9e9e941a12d2aa5dd85cbc8c}} 
+void {\bfseries setD} (double)
+\item 
+\mbox{\Hypertarget{classtPlane_a21e7cda32a0a6111f92cb8102915d304}\label{classtPlane_a21e7cda32a0a6111f92cb8102915d304}} 
+void \hyperlink{classtPlane_a21e7cda32a0a6111f92cb8102915d304}{setnew} (double, double, double, double)
+\begin{DoxyCompactList}\small\item\em Set new fields values. \end{DoxyCompactList}\item 
+bool \hyperlink{classtPlane_a382974c179a2bac3eb2da1d18c4dd860}{correct} () const
+\item 
+\mbox{\Hypertarget{classtPlane_a7891a14a7511d7526633be820ce1604d}\label{classtPlane_a7891a14a7511d7526633be820ce1604d}} 
+void \hyperlink{classtPlane_a7891a14a7511d7526633be820ce1604d}{Normalize} ()
+\begin{DoxyCompactList}\small\item\em Normalization of the plane. \end{DoxyCompactList}\item 
+\hyperlink{classtPlane}{t\+Plane} \hyperlink{classtPlane_a8957e329f01270932a9a5b73ee9fe33a}{Normalize} () const
+\item 
+\mbox{\Hypertarget{classtPlane_a90727fd4cebd6ddb9a82482ad89a9edd}\label{classtPlane_a90727fd4cebd6ddb9a82482ad89a9edd}} 
+bool \hyperlink{classtPlane_a90727fd4cebd6ddb9a82482ad89a9edd}{Has\+Point} (const \hyperlink{classtPoint}{t\+Point} \&) const
+\begin{DoxyCompactList}\small\item\em Check whether the point is on the plane. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtPlane_a08f5fac758dd76797e3571c76ec7b3fa}\label{classtPlane_a08f5fac758dd76797e3571c76ec7b3fa}} 
+double \hyperlink{classtPlane_a08f5fac758dd76797e3571c76ec7b3fa}{Dist\+To\+Point} (const \hyperlink{classtPoint}{t\+Point} \&) const
+\begin{DoxyCompactList}\small\item\em Find the distance from the point to the plane. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtPlane_a90739f10ab1734192c38128f8b267c7f}\label{classtPlane_a90739f10ab1734192c38128f8b267c7f}} 
+\hyperlink{classtPlane}{t\+Plane} \& {\bfseries operator=} (const \hyperlink{classtPlane}{t\+Plane} \&)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtPlane_a6451041e9d6964bdee537cfbbb12b661}\label{classtPlane_a6451041e9d6964bdee537cfbbb12b661}} 
+bool {\bfseries operator==} (const \hyperlink{classtPlane}{t\+Plane} \&, const \hyperlink{classtPlane}{t\+Plane} \&)
+\item 
+\mbox{\Hypertarget{classtPlane_a17e0e9cf17cafb43cdcd42e043267101}\label{classtPlane_a17e0e9cf17cafb43cdcd42e043267101}} 
+ostream \& {\bfseries operator$<$$<$} (ostream \&, const \hyperlink{classtPlane}{t\+Plane} \&)
+\item 
+\mbox{\Hypertarget{classtPlane_aee7595b1119f9dea39ba0c12dc8c4dc3}\label{classtPlane_aee7595b1119f9dea39ba0c12dc8c4dc3}} 
+istream \& {\bfseries operator$>$$>$} (istream \&, \hyperlink{classtPlane}{t\+Plane} \&)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Plane class. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classtPlane_a382974c179a2bac3eb2da1d18c4dd860}\label{classtPlane_a382974c179a2bac3eb2da1d18c4dd860}} 
+\index{t\+Plane@{t\+Plane}!correct@{correct}}
+\index{correct@{correct}!t\+Plane@{t\+Plane}}
+\subsubsection{\texorpdfstring{correct()}{correct()}}
+{\footnotesize\ttfamily bool t\+Plane\+::correct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Check if the coefficients in the equation are not too small (internal function) \mbox{\Hypertarget{classtPlane_a8957e329f01270932a9a5b73ee9fe33a}\label{classtPlane_a8957e329f01270932a9a5b73ee9fe33a}} 
+\index{t\+Plane@{t\+Plane}!Normalize@{Normalize}}
+\index{Normalize@{Normalize}!t\+Plane@{t\+Plane}}
+\subsubsection{\texorpdfstring{Normalize()}{Normalize()}}
+{\footnotesize\ttfamily \hyperlink{classtPlane}{t\+Plane} t\+Plane\+::\+Normalize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Normalization of the plane (for constant planes) \begin{DoxyReturn}{Returns}
+normalized plane 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/b1zon/\+Desktop/cpp/\+K\+P\+I-\/geometrylib/include/geometry.\+hpp\end{DoxyCompactItemize}
