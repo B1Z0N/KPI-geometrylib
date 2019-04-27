@@ -42,7 +42,12 @@ tNamed::~tNamed()
     fNameLength = 0;
 }
 
-char *tNamed::Name() const
+const char *tNamed::Name() const
+{
+    return fName;
+}
+
+char *tNamed::Name()
 {
     return fName;
 }

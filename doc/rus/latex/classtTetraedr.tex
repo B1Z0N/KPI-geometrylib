@@ -1,0 +1,96 @@
+\hypertarget{classtTetraedr}{}\section{Класс t\+Tetraedr}
+\label{classtTetraedr}\index{t\+Tetraedr@{t\+Tetraedr}}
+
+
+Класс тетраэдра -\/ трегуольной пирамиды  
+
+
+
+
+{\ttfamily \#include $<$russian\+\_\+version\+\_\+of\+\_\+geometry.\+hpp$>$}
+
+
+
+Граф наследования\+:t\+Tetraedr\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=136pt]{classtTetraedr__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Граф связей класса t\+Tetraedr\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=136pt]{classtTetraedr__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtTetraedr_ae16c310b01dbd8381503cf3610a9953e}\label{classtTetraedr_ae16c310b01dbd8381503cf3610a9953e}} 
+\hyperlink{classtTetraedr_ae16c310b01dbd8381503cf3610a9953e}{t\+Tetraedr} (const \hyperlink{classtPoint}{t\+Point} \&V1, const \hyperlink{classtPoint}{t\+Point} \&V2, const \hyperlink{classtPoint}{t\+Point} \&V3, const \hyperlink{classtPoint}{t\+Point} \&S, char const $\ast$New\+Name=\char`\"{}a Tetraedr\char`\"{})
+\begin{DoxyCompactList}\small\item\em Конструктор по четырем точкам и имени \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtTetraedr_ad276c51eebadada75b0e1a014421e426}\label{classtTetraedr_ad276c51eebadada75b0e1a014421e426}} 
+\hyperlink{classtTetraedr_ad276c51eebadada75b0e1a014421e426}{t\+Tetraedr} (const \hyperlink{classtPlane}{t\+Plane} \&, const \hyperlink{classtPlane}{t\+Plane} \&, const \hyperlink{classtPlane}{t\+Plane} \&, const \hyperlink{classtPlane}{t\+Plane} \&, char const $\ast$New\+Name=\char`\"{}a Tetraedr\char`\"{})
+\begin{DoxyCompactList}\small\item\em Конструктор по четырем плоскостям и имени \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtTetraedr_aef32a93d0050137e7bd1fff3688a830b}\label{classtTetraedr_aef32a93d0050137e7bd1fff3688a830b}} 
+\hyperlink{classtTetraedr_aef32a93d0050137e7bd1fff3688a830b}{t\+Tetraedr} (const \hyperlink{classtTriangle}{t\+Triangle} \&, const \hyperlink{classtPoint}{t\+Point} \&, char const $\ast$New\+Name=\char`\"{}a Tetraedr\char`\"{})
+\begin{DoxyCompactList}\small\item\em Конструктор по треугольнику(основе) и точке(четвертой вершине) и имени \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtTetraedr_a244165229504fe41e8ee386b6fdafc39}\label{classtTetraedr_a244165229504fe41e8ee386b6fdafc39}} 
+\hyperlink{classtTetraedr_a244165229504fe41e8ee386b6fdafc39}{t\+Tetraedr} (double ax=0, double ay=0, double az=0, double bx=1, double by=0, double bz=0, double cx=0, double cy=1, double cz=0, double sx=0, double sy=0, double sz=1, char const $\ast$New\+Name=\char`\"{}a Tetraedr\char`\"{})
+\begin{DoxyCompactList}\small\item\em Конструктор по координатам четырех точек и имени \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtTetraedr_afd21d86cdbebaf0cd0ce7ad2869a7011}\label{classtTetraedr_afd21d86cdbebaf0cd0ce7ad2869a7011}} 
+{\bfseries t\+Tetraedr} (const \hyperlink{classtTetraedr}{t\+Tetraedr} \&)
+\item 
+bool \hyperlink{classtTetraedr_aa8b4ca43b819c0431fb28673b978d3c8}{correct} () const
+\item 
+\mbox{\Hypertarget{classtTetraedr_a897b074d2ee556801ba905e123a0f1e9}\label{classtTetraedr_a897b074d2ee556801ba905e123a0f1e9}} 
+\hyperlink{classtPoint}{t\+Point} {\bfseries GetS} () const
+\item 
+\mbox{\Hypertarget{classtTetraedr_acd33af5079b8e6703b582144dca12b96}\label{classtTetraedr_acd33af5079b8e6703b582144dca12b96}} 
+void {\bfseries SetS} (const \hyperlink{classtPoint}{t\+Point} \&)
+\item 
+\mbox{\Hypertarget{classtTetraedr_aab5ca30306a1915b174bcb6e248f4cae}\label{classtTetraedr_aab5ca30306a1915b174bcb6e248f4cae}} 
+\hyperlink{classtTriangle}{t\+Triangle} {\bfseries GetT} () const
+\item 
+\mbox{\Hypertarget{classtTetraedr_aa7af31f49c73f7ec04cb350723ebfb40}\label{classtTetraedr_aa7af31f49c73f7ec04cb350723ebfb40}} 
+void {\bfseries SetT} (const \hyperlink{classtTriangle}{t\+Triangle} \&)
+\item 
+\mbox{\Hypertarget{classtTetraedr_a7acaaa1f874fcff2d52a233297e96217}\label{classtTetraedr_a7acaaa1f874fcff2d52a233297e96217}} 
+double \hyperlink{classtTetraedr_a7acaaa1f874fcff2d52a233297e96217}{Volume} () const
+\begin{DoxyCompactList}\small\item\em Объём тетраэдра \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtTetraedr_a1460b237b37015925bb2da797574d364}\label{classtTetraedr_a1460b237b37015925bb2da797574d364}} 
+\hyperlink{classtTetraedr}{t\+Tetraedr} \& {\bfseries operator=} (const \hyperlink{classtTetraedr}{t\+Tetraedr} \&)
+\end{DoxyCompactItemize}
+\subsection*{Друзья}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtTetraedr_a7d75847c4421b845c342d233964037c2}\label{classtTetraedr_a7d75847c4421b845c342d233964037c2}} 
+bool {\bfseries operator==} (const \hyperlink{classtTetraedr}{t\+Tetraedr} \&, const \hyperlink{classtTetraedr}{t\+Tetraedr} \&)
+\item 
+\mbox{\Hypertarget{classtTetraedr_ad388d492e284583bda2df6567cb9ed83}\label{classtTetraedr_ad388d492e284583bda2df6567cb9ed83}} 
+ostream \& {\bfseries operator$<$$<$} (ostream \&, const \hyperlink{classtTetraedr}{t\+Tetraedr} \&)
+\item 
+\mbox{\Hypertarget{classtTetraedr_a2d5eb752c4a11b1151046f7849146be0}\label{classtTetraedr_a2d5eb752c4a11b1151046f7849146be0}} 
+istream \& {\bfseries operator$>$$>$} (istream \&, \hyperlink{classtTetraedr}{t\+Tetraedr} \&)
+\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+Класс тетраэдра -\/ трегуольной пирамиды 
+
+\subsection{Методы}
+\mbox{\Hypertarget{classtTetraedr_aa8b4ca43b819c0431fb28673b978d3c8}\label{classtTetraedr_aa8b4ca43b819c0431fb28673b978d3c8}} 
+\index{t\+Tetraedr@{t\+Tetraedr}!correct@{correct}}
+\index{correct@{correct}!t\+Tetraedr@{t\+Tetraedr}}
+\subsubsection{\texorpdfstring{correct()}{correct()}}
+{\footnotesize\ttfamily bool t\+Tetraedr\+::correct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Проверить, не слишком ли малы коефициенты в уравнении (внутренняя функция) 
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+code/russian\+\_\+version\+\_\+of\+\_\+geometry.\+hpp\end{DoxyCompactItemize}

@@ -224,10 +224,3 @@ tPoint LineCutPlane(const tLine& l, const tPlane& p)
     tPoint T(l.Dx() * t + l.Sx(), l.Dy() * t + l.Sy(), l.Dz() * t + l.Sz());
     return T;
 }
-
-tPoint ProjectPointToPlane(const tPoint &M, const tPlane &P)
-{
-    tLine l(M, P);
-    tPoint T{LineCutPlane(l, P)};
-    return T;
-}

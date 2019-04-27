@@ -1,0 +1,9 @@
+<map id="Иерархия классов. Графический вид." name="Иерархия классов. Графический вид.">
+<area shape="rect" id="node1" href="$classtNamed.html" title="Общий базовый класс для всех остальных классов " alt="" coords="5,107,73,133"/>
+<area shape="rect" id="node2" href="$classtLine.html" title="Класс прямой линии " alt="" coords="133,5,184,32"/>
+<area shape="rect" id="node3" href="$classtPlane.html" title="Класс плоскости " alt="" coords="129,56,188,83"/>
+<area shape="rect" id="node4" href="$classtPoint.html" title="Класс точки " alt="" coords="131,107,187,133"/>
+<area shape="rect" id="node6" href="$classtTetraedr.html" title="Класс тетраэдра &#45; трегуольной пирамиды " alt="" coords="121,157,196,184"/>
+<area shape="rect" id="node7" href="$classtTriangle.html" title="Класс треугольника " alt="" coords="123,208,195,235"/>
+<area shape="rect" id="node5" href="$classtVector.html" title="Класс вектора " alt="" coords="244,107,308,133"/>
+</map>

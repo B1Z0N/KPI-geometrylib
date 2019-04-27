@@ -1,0 +1,156 @@
+\hypertarget{classtLine}{}\section{Класс t\+Line}
+\label{classtLine}\index{t\+Line@{t\+Line}}
+
+
+Класс прямой линии  
+
+
+
+
+{\ttfamily \#include $<$russian\+\_\+version\+\_\+of\+\_\+geometry.\+hpp$>$}
+
+
+
+Граф наследования\+:t\+Line\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=131pt]{classtLine__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Граф связей класса t\+Line\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=131pt]{classtLine__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classtLine_ab61e326194db410630307c04cbbaf301}{t\+Line} (double newa=0, double newb=0, double newc=0, double newn=1, double newm=0, double newp=0, char const $\ast$New\+Name=\char`\"{}a Line\char`\"{})
+\begin{DoxyCompactList}\small\item\em Конструктор через коефициенты  Уравнение прямой в пространстве\+: (x-\/a)/n = (x-\/b)/m = (x-\/c)/p. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtLine_a8af9012ac69b257b296c9104a6f6fda7}\label{classtLine_a8af9012ac69b257b296c9104a6f6fda7}} 
+\hyperlink{classtLine_a8af9012ac69b257b296c9104a6f6fda7}{t\+Line} (const \hyperlink{classtPoint}{t\+Point} \&A, const \hyperlink{classtPoint}{t\+Point} \&B, char const $\ast$New\+Name=\char`\"{}a Line\char`\"{})
+\begin{DoxyCompactList}\small\item\em Конструктор через две точки и имя \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtLine_a5ee3acc8febba1e9f9473be6399341c8}\label{classtLine_a5ee3acc8febba1e9f9473be6399341c8}} 
+\hyperlink{classtLine_a5ee3acc8febba1e9f9473be6399341c8}{t\+Line} (const \hyperlink{classtPoint}{t\+Point} \&S, const \hyperlink{classtVector}{t\+Vector} \&D, char const $\ast$New\+Name=\char`\"{}a Line\char`\"{})
+\begin{DoxyCompactList}\small\item\em Конструктор через точку, вектор направления и имя \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtLine_a9a1dbb658383a93138ed00d8893c590b}\label{classtLine_a9a1dbb658383a93138ed00d8893c590b}} 
+\hyperlink{classtLine_a9a1dbb658383a93138ed00d8893c590b}{t\+Line} (const \hyperlink{classtPlane}{t\+Plane} \&v1, const \hyperlink{classtPlane}{t\+Plane} \&v2, char const $\ast$New\+Name=\char`\"{}a Line\char`\"{})
+\begin{DoxyCompactList}\small\item\em Конструктор чере пересечение двух плоскостей и имя \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtLine_a2154dba6e6089dcbb6c3a61a10bb76c1}\label{classtLine_a2154dba6e6089dcbb6c3a61a10bb76c1}} 
+{\bfseries t\+Line} (const \hyperlink{classtLine}{t\+Line} \&)
+\item 
+\mbox{\Hypertarget{classtLine_a42c5470a9e40032639b6f22c82f90d9d}\label{classtLine_a42c5470a9e40032639b6f22c82f90d9d}} 
+\hyperlink{classtLine_a42c5470a9e40032639b6f22c82f90d9d}{t\+Line} (const \hyperlink{classtPoint}{t\+Point} \&, const \hyperlink{classtPlane}{t\+Plane} \&)
+\begin{DoxyCompactList}\small\item\em Конструктор прямой как перпендикуляр точки к плоскости \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtLine_ad74c8cba60f8719f6cfaaf7bb86933bc}\label{classtLine_ad74c8cba60f8719f6cfaaf7bb86933bc}} 
+void \hyperlink{classtLine_ad74c8cba60f8719f6cfaaf7bb86933bc}{setnew} (double, double, double, double, double, double)
+\begin{DoxyCompactList}\small\item\em Установить новые значения коефициентов \end{DoxyCompactList}\item 
+bool \hyperlink{classtLine_aa824b319e4aa173d221ff28f55ec1890}{correct} () const
+\item 
+\mbox{\Hypertarget{classtLine_ae24e73371453cca328317f2512d9a53e}\label{classtLine_ae24e73371453cca328317f2512d9a53e}} 
+\hyperlink{classtVector}{t\+Vector} \hyperlink{classtLine_ae24e73371453cca328317f2512d9a53e}{G\+Dir} () const
+\begin{DoxyCompactList}\small\item\em Получить вектор направления \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtLine_aa2b2ab0dd465f2a824860b1f7211be1e}\label{classtLine_aa2b2ab0dd465f2a824860b1f7211be1e}} 
+\hyperlink{classtPoint}{t\+Point} \hyperlink{classtLine_aa2b2ab0dd465f2a824860b1f7211be1e}{G\+Source} () const
+\begin{DoxyCompactList}\small\item\em Получить начальную точку \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtLine_aab7ebec6bd8c0b93343b2410c96e4f72}\label{classtLine_aab7ebec6bd8c0b93343b2410c96e4f72}} 
+double {\bfseries Sx} () const
+\item 
+\mbox{\Hypertarget{classtLine_a7d663774fd202f5aac5b7f8b2b0df4e7}\label{classtLine_a7d663774fd202f5aac5b7f8b2b0df4e7}} 
+void {\bfseries Set\+Sx} (double)
+\item 
+\mbox{\Hypertarget{classtLine_a536f3e6c32bbfdf22d47db22c0d7c23e}\label{classtLine_a536f3e6c32bbfdf22d47db22c0d7c23e}} 
+double {\bfseries Dx} () const
+\item 
+\mbox{\Hypertarget{classtLine_a3c927cf224e787e92d5738e203b14cdb}\label{classtLine_a3c927cf224e787e92d5738e203b14cdb}} 
+void {\bfseries Set\+Dx} (double)
+\item 
+\mbox{\Hypertarget{classtLine_a7c99f5ee41a79b60d22e9484c13a30be}\label{classtLine_a7c99f5ee41a79b60d22e9484c13a30be}} 
+double {\bfseries Sy} () const
+\item 
+\mbox{\Hypertarget{classtLine_a66b58812264146fe885327e0bc695908}\label{classtLine_a66b58812264146fe885327e0bc695908}} 
+void {\bfseries Set\+Sy} (double)
+\item 
+\mbox{\Hypertarget{classtLine_a3bcd4c881b5a35c0a76c64994a7ef138}\label{classtLine_a3bcd4c881b5a35c0a76c64994a7ef138}} 
+double {\bfseries Dy} () const
+\item 
+\mbox{\Hypertarget{classtLine_a89f21fd6ee1472f47100424b40e64706}\label{classtLine_a89f21fd6ee1472f47100424b40e64706}} 
+void {\bfseries Set\+Dy} (double)
+\item 
+\mbox{\Hypertarget{classtLine_a22f561a20c77abe7ea6e842ca233001a}\label{classtLine_a22f561a20c77abe7ea6e842ca233001a}} 
+double {\bfseries Sz} () const
+\item 
+\mbox{\Hypertarget{classtLine_afba2ee2d43b66b9bbbd955eb5183c7e9}\label{classtLine_afba2ee2d43b66b9bbbd955eb5183c7e9}} 
+void {\bfseries Set\+Sz} (double)
+\item 
+\mbox{\Hypertarget{classtLine_abc6784d8434fcb7d7d9750da03e1c1dc}\label{classtLine_abc6784d8434fcb7d7d9750da03e1c1dc}} 
+double {\bfseries Dz} () const
+\item 
+\mbox{\Hypertarget{classtLine_ae30c9e94b9bf36c5054f7a21ecc42495}\label{classtLine_ae30c9e94b9bf36c5054f7a21ecc42495}} 
+void {\bfseries Set\+Dz} (double)
+\item 
+\mbox{\Hypertarget{classtLine_ac6a3f1c09cfbe241038e4e23ed223558}\label{classtLine_ac6a3f1c09cfbe241038e4e23ed223558}} 
+void \hyperlink{classtLine_ac6a3f1c09cfbe241038e4e23ed223558}{Set\+Source} (const \hyperlink{classtPoint}{t\+Point} \&)
+\begin{DoxyCompactList}\small\item\em Установить начальную точку \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtLine_acff75aa6563c398c06c2ed5e4d118bb4}\label{classtLine_acff75aa6563c398c06c2ed5e4d118bb4}} 
+void \hyperlink{classtLine_acff75aa6563c398c06c2ed5e4d118bb4}{Set\+Dir} (const \hyperlink{classtVector}{t\+Vector} \&)
+\begin{DoxyCompactList}\small\item\em Установить вектор направления \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtLine_aeab725824ab76aa77c24c909086647f7}\label{classtLine_aeab725824ab76aa77c24c909086647f7}} 
+bool \hyperlink{classtLine_aeab725824ab76aa77c24c909086647f7}{Has\+Point} (const \hyperlink{classtPoint}{t\+Point} \&) const
+\begin{DoxyCompactList}\small\item\em Проверить принадлежит ли точка прямой \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtLine_a5b0fe2c1ec1e51fdd35021ab37532ea8}\label{classtLine_a5b0fe2c1ec1e51fdd35021ab37532ea8}} 
+double \hyperlink{classtLine_a5b0fe2c1ec1e51fdd35021ab37532ea8}{Dist\+To\+Point} (const \hyperlink{classtPoint}{t\+Point} \&) const
+\begin{DoxyCompactList}\small\item\em Найти расстояние от точки к прямой \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtLine_a1c3671f6868050035c0b2e5c90eaa143}\label{classtLine_a1c3671f6868050035c0b2e5c90eaa143}} 
+bool \hyperlink{classtLine_a1c3671f6868050035c0b2e5c90eaa143}{Line\+Par} (const \hyperlink{classtLine}{t\+Line} \&) const
+\begin{DoxyCompactList}\small\item\em Проверить прямые на паралельность \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtLine_aca3e282559b32039c0aae22eaff100f6}\label{classtLine_aca3e282559b32039c0aae22eaff100f6}} 
+\hyperlink{classtLine}{t\+Line} \& {\bfseries operator=} (const \hyperlink{classtLine}{t\+Line} \&)
+\end{DoxyCompactItemize}
+\subsection*{Друзья}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtLine_a39d9dbc55c19c2857c4d8fee4d25c667}\label{classtLine_a39d9dbc55c19c2857c4d8fee4d25c667}} 
+bool {\bfseries operator==} (const \hyperlink{classtLine}{t\+Line} \&, const \hyperlink{classtLine}{t\+Line} \&)
+\item 
+\mbox{\Hypertarget{classtLine_a74399479e67eadce300f996b6ddf21c3}\label{classtLine_a74399479e67eadce300f996b6ddf21c3}} 
+ostream \& {\bfseries operator$<$$<$} (ostream \&, const \hyperlink{classtLine}{t\+Line} \&)
+\item 
+\mbox{\Hypertarget{classtLine_a0f6f0d2af6275b58e63e6f5667bf587f}\label{classtLine_a0f6f0d2af6275b58e63e6f5667bf587f}} 
+istream \& {\bfseries operator$>$$>$} (istream \&, \hyperlink{classtLine}{t\+Line} \&)
+\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+Класс прямой линии 
+
+\subsection{Конструктор(ы)}
+\mbox{\Hypertarget{classtLine_ab61e326194db410630307c04cbbaf301}\label{classtLine_ab61e326194db410630307c04cbbaf301}} 
+\index{t\+Line@{t\+Line}!t\+Line@{t\+Line}}
+\index{t\+Line@{t\+Line}!t\+Line@{t\+Line}}
+\subsubsection{\texorpdfstring{t\+Line()}{tLine()}}
+{\footnotesize\ttfamily t\+Line\+::t\+Line (\begin{DoxyParamCaption}\item[{double}]{newa = {\ttfamily 0},  }\item[{double}]{newb = {\ttfamily 0},  }\item[{double}]{newc = {\ttfamily 0},  }\item[{double}]{newn = {\ttfamily 1},  }\item[{double}]{newm = {\ttfamily 0},  }\item[{double}]{newp = {\ttfamily 0},  }\item[{char const $\ast$}]{New\+Name = {\ttfamily \char`\"{}a~Line\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+Конструктор через коефициенты  Уравнение прямой в пространстве\+: (x-\/a)/n = (x-\/b)/m = (x-\/c)/p. 
+
+Ввести коефициенты в таком порядке\+: a, b, c (сначала верхние), n, m, p (потом нижние) 
+
+\subsection{Методы}
+\mbox{\Hypertarget{classtLine_aa824b319e4aa173d221ff28f55ec1890}\label{classtLine_aa824b319e4aa173d221ff28f55ec1890}} 
+\index{t\+Line@{t\+Line}!correct@{correct}}
+\index{correct@{correct}!t\+Line@{t\+Line}}
+\subsubsection{\texorpdfstring{correct()}{correct()}}
+{\footnotesize\ttfamily bool t\+Line\+::correct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Проверить, не слишком ли малы коефициенты в уравнении (внутренняя функция) 
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+code/russian\+\_\+version\+\_\+of\+\_\+geometry.\+hpp\end{DoxyCompactItemize}

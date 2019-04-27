@@ -210,3 +210,10 @@ tPoint Cut3Planes(const tPlane &a, const tPlane &b, const tPlane &c)
     return T;
   }
 }
+
+tPoint ProjectPointToPlane(const tPoint &M, const tPlane &P)
+{
+    tLine l(M, P);
+    tPoint T{LineCutPlane(l, P)};
+    return T;
+}
