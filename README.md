@@ -10,4 +10,4 @@ at https://b1z0n.github.io/KPI-geometrylib/
 
 For future reuse check out license file.
 
-Fedurko M. A.
+M. Fedurko
