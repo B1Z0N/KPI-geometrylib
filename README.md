@@ -3,7 +3,7 @@
 ## English
 
 Geometry library created by Samarin M. S. in 2006. 
-Refactored, updated to c++11, documented and tested  by me(Fedurko Nikolay)
+Refactored, updated to c++11, documented and tested.
 
 Too get started you should definitely check "tests" folder as an example.
 
@@ -12,19 +12,4 @@ at https://b1z0n.github.io/KPI-geometrylib/
 
 For future reuse check out license file.
 
-Fedurko N. A.
-
-## Русский
-
-Библиотека геометрических примитивов, созданная Самариным М.С. в 2006 году.
-Была проверена(в некоторых местах исправлена), обновлена до c ++ 11, 
-задокументирована и протестирована мной (Федурко Николай)
-
-Чтобы начать, обязательно проверьте папку «tests» в качестве примера.
-
-Также есть две версии документации на русском и английском языках,
-найти которую можна по адресу https://b1z0n.github.io/KPI-geometrylib/
-
-Для дальнейшего использования проверьте файл лицензии.
-
-Федурко Н. А.
+Fedurko M. A.
